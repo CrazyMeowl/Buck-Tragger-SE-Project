@@ -10,13 +10,14 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class SignInScreenUi(object):
-	def setupUi(self, Dialog):
-		Dialog.setObjectName("Dialog")
-		Dialog.resize(1200, 800)
-		Dialog.setMinimumSize(QtCore.QSize(1200, 800))
-		Dialog.setMaximumSize(QtCore.QSize(1200, 800))
-		Dialog.setStyleSheet("QPushButton{\n"
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(1200, 800)
+        Dialog.setMinimumSize(QtCore.QSize(1200, 800))
+        Dialog.setMaximumSize(QtCore.QSize(1200, 800))
+        Dialog.setStyleSheet("QPushButton{\n"
 "font: 20pt \"Consolas\";\n"
 "background-color:rgb(201, 150, 204);\n"
 "border-radius:15px;\n"
@@ -24,95 +25,95 @@ class SignInScreenUi(object):
 "color:rgb(28, 12, 91);};\n"
 "\n"
 "")
-		self.bgwidget = QtWidgets.QWidget(Dialog)
-		self.bgwidget.setGeometry(QtCore.QRect(-1, -1, 1201, 801))
-		self.bgwidget.setStyleSheet("QWidget#bgwidget{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb(28, 12, 91), stop:0.041 rgb(28, 12, 91), stop:1 rgb(145, 107, 191));;};\n"
+        self.bgwidget = QtWidgets.QWidget(Dialog)
+        self.bgwidget.setGeometry(QtCore.QRect(-1, -1, 1201, 801))
+        self.bgwidget.setStyleSheet("QWidget#bgwidget{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgb(28, 12, 91), stop:0.041 rgb(28, 12, 91), stop:1 rgb(145, 107, 191));;};\n"
 "")
-		self.bgwidget.setObjectName("bgwidget")
-		self.label = QtWidgets.QLabel(self.bgwidget)
-		self.label.setGeometry(QtCore.QRect(810, 20, 371, 112))
-		self.label.setStyleSheet("font: 75 72pt \"Consolas\";\n"
+        self.bgwidget.setObjectName("bgwidget")
+        self.label = QtWidgets.QLabel(self.bgwidget)
+        self.label.setGeometry(QtCore.QRect(810, 20, 371, 112))
+        self.label.setStyleSheet("font: 75 72pt \"Consolas\";\n"
 "color: rgb(201, 150, 204);")
-		self.label.setObjectName("label")
-		self.label_2 = QtWidgets.QLabel(self.bgwidget)
-		self.label_2.setGeometry(QtCore.QRect(490, 130, 691, 47))
-		self.label_2.setStyleSheet("font: 75 30pt \"Consolas\";\n"
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.bgwidget)
+        self.label_2.setGeometry(QtCore.QRect(490, 130, 691, 47))
+        self.label_2.setStyleSheet("font: 75 30pt \"Consolas\";\n"
 "\n"
 "color: rgb(201, 150, 204);")
-		self.label_2.setObjectName("label_2")
-		self.label_3 = QtWidgets.QLabel(self.bgwidget)
-		self.label_3.setGeometry(QtCore.QRect(650, 200, 151, 31))
-		self.label_3.setStyleSheet("font: 75 25pt \"Consolas\";\n"
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.bgwidget)
+        self.label_3.setGeometry(QtCore.QRect(650, 200, 151, 31))
+        self.label_3.setStyleSheet("font: 75 25pt \"Consolas\";\n"
 "\n"
 "color: rgb(201, 150, 204);\n"
 "")
-		self.label_3.setObjectName("label_3")
-		self.label_4 = QtWidgets.QLabel(self.bgwidget)
-		self.label_4.setGeometry(QtCore.QRect(650, 260, 151, 31))
-		self.label_4.setStyleSheet("font: 75 25pt \"Consolas\";\n"
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.bgwidget)
+        self.label_4.setGeometry(QtCore.QRect(650, 260, 151, 31))
+        self.label_4.setStyleSheet("font: 75 25pt \"Consolas\";\n"
 "color: rgb(201, 150, 204);\n"
 "")
-		self.label_4.setObjectName("label_4")
-		self.error = QtWidgets.QLabel(self.bgwidget)
-		self.error.setGeometry(QtCore.QRect(810, 309, 371, 21))
-		self.error.setStyleSheet("font: 12pt \"Consolas\"; color:red;")
-		self.error.setText("")
-		self.error.setObjectName("error")
-		self.username_box = QtWidgets.QLineEdit(self.bgwidget)
-		self.username_box.setGeometry(QtCore.QRect(810, 190, 371, 41))
-		self.username_box.setStyleSheet("font: 20pt \"Consolas\";\n"
+        self.label_4.setObjectName("label_4")
+        self.error = QtWidgets.QLabel(self.bgwidget)
+        self.error.setGeometry(QtCore.QRect(810, 309, 371, 21))
+        self.error.setStyleSheet("font: 12pt \"Consolas\"; color:red;")
+        self.error.setText("")
+        self.error.setObjectName("error")
+        self.username_box = QtWidgets.QLineEdit(self.bgwidget)
+        self.username_box.setGeometry(QtCore.QRect(810, 190, 371, 41))
+        self.username_box.setStyleSheet("font: 20pt \"Consolas\";\n"
 "background-color:rgb(145, 107, 191);\n"
 "border-radius:15px;\n"
 "border-color: rgb(84, 255, 5);\n"
 "color: rgb(61, 44, 141);")
-		self.username_box.setText("")
-		self.username_box.setObjectName("username_box")
-		self.password_box = QtWidgets.QLineEdit(self.bgwidget)
-		self.password_box.setGeometry(QtCore.QRect(810, 250, 371, 41))
-		self.password_box.setStyleSheet("font: 20pt \"Consolas\";\n"
+        self.username_box.setText("")
+        self.username_box.setObjectName("username_box")
+        self.password_box = QtWidgets.QLineEdit(self.bgwidget)
+        self.password_box.setGeometry(QtCore.QRect(810, 250, 371, 41))
+        self.password_box.setStyleSheet("font: 20pt \"Consolas\";\n"
 "background-color:rgb(145, 107, 191);\n"
 "border-radius:15px;\n"
 "border-color: rgb(84, 255, 5);\n"
 "color: rgb(61, 44, 141);")
-		self.password_box.setObjectName("password_box")
-		self.signin_button = QtWidgets.QPushButton(self.bgwidget)
-		self.signin_button.setGeometry(QtCore.QRect(1000, 350, 181, 51))
-		font = QtGui.QFont()
-		font.setPointSize(20)
-		font.setBold(False)
-		font.setItalic(False)
-		self.signin_button.setFont(font)
-		self.signin_button.setStyleSheet("")
-		self.signin_button.setObjectName("signin_button")
-		self.back_button = QtWidgets.QPushButton(Dialog)
-		self.back_button.setGeometry(QtCore.QRect(10, 750, 81, 41))
-		font = QtGui.QFont()
-		font.setPointSize(20)
-		font.setBold(False)
-		font.setItalic(False)
-		self.back_button.setFont(font)
-		self.back_button.setStyleSheet("")
-		self.back_button.setObjectName("back_button")
+        self.password_box.setObjectName("password_box")
+        self.signin_button = QtWidgets.QPushButton(self.bgwidget)
+        self.signin_button.setGeometry(QtCore.QRect(1000, 350, 181, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        self.signin_button.setFont(font)
+        self.signin_button.setStyleSheet("")
+        self.signin_button.setObjectName("signin_button")
+        self.back_button = QtWidgets.QPushButton(Dialog)
+        self.back_button.setGeometry(QtCore.QRect(10, 750, 81, 41))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        self.back_button.setFont(font)
+        self.back_button.setStyleSheet("")
+        self.back_button.setObjectName("back_button")
 
-		self.retranslateUi(Dialog)
-		QtCore.QMetaObject.connectSlotsByName(Dialog)
-	
-	def retranslateUi(self, Dialog):
-		_translate = QtCore.QCoreApplication.translate
-		Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-		self.label.setText(_translate("Dialog", "Sign in"))
-		self.label_2.setText(_translate("Dialog", "Sign in to your exiting account"))
-		self.label_3.setText(_translate("Dialog", "Username"))
-		self.label_4.setText(_translate("Dialog", "Password"))
-		self.signin_button.setText(_translate("Dialog", "Sign in"))
-		self.back_button.setText(_translate("Dialog", "Back"))
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label.setText(_translate("Dialog", "Sign in"))
+        self.label_2.setText(_translate("Dialog", "Sign in to your exiting account"))
+        self.label_3.setText(_translate("Dialog", "Username"))
+        self.label_4.setText(_translate("Dialog", "Password"))
+        self.signin_button.setText(_translate("Dialog", "Sign in"))
+        self.back_button.setText(_translate("Dialog", "Back"))
 
 
 if __name__ == "__main__":
-	import sys
-	app = QtWidgets.QApplication(sys.argv)
-	Dialog = QtWidgets.QDialog()
-	ui = Signin()
-	ui.setupUi(Dialog)
-	Dialog.show()
-	sys.exit(app.exec_())
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())

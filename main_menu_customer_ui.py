@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_menu_admin.ui'
+# Form implementation generated from reading ui file 'main_menu_customer.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class MainMenuCustomerUi(object):
+class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(1200, 800)
@@ -45,8 +45,7 @@ class MainMenuCustomerUi(object):
         self.slide_menu_container = QtWidgets.QFrame(Dialog)
         self.slide_menu_container.setMaximumSize(QtCore.QSize(250, 16777215))
         self.slide_menu_container.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.slide_menu_container.setStyleSheet("background-color:rgb(107, 79, 79)\n"
-"")
+        self.slide_menu_container.setStyleSheet("background-color:rgb(1, 86, 104)")
         self.slide_menu_container.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.slide_menu_container.setFrameShadow(QtWidgets.QFrame.Raised)
         self.slide_menu_container.setObjectName("slide_menu_container")
@@ -196,7 +195,7 @@ class MainMenuCustomerUi(object):
         self.verticalLayout_2.addWidget(self.frame_2)
         self.horizontalLayout.addWidget(self.slide_menu_container)
         self.main_menu_container = QtWidgets.QFrame(Dialog)
-        self.main_menu_container.setStyleSheet("background-color:rgb(72, 52, 52);")
+        self.main_menu_container.setStyleSheet("background-color:rgb(6, 100, 140)")
         self.main_menu_container.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.main_menu_container.setFrameShadow(QtWidgets.QFrame.Raised)
         self.main_menu_container.setObjectName("main_menu_container")
@@ -218,15 +217,15 @@ class MainMenuCustomerUi(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.menu_buton = QtWidgets.QPushButton(self.header_0)
-        self.menu_buton.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
-        self.menu_buton.setText("")
+        self.menu_button = QtWidgets.QPushButton(self.header_0)
+        self.menu_button.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        self.menu_button.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.menu_buton.setIcon(icon3)
-        self.menu_buton.setIconSize(QtCore.QSize(25, 25))
-        self.menu_buton.setObjectName("menu_buton")
-        self.horizontalLayout_7.addWidget(self.menu_buton, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.menu_button.setIcon(icon3)
+        self.menu_button.setIconSize(QtCore.QSize(25, 25))
+        self.menu_button.setObjectName("menu_button")
+        self.horizontalLayout_7.addWidget(self.menu_button, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.horizontalLayout_5.addWidget(self.header_0, 0, QtCore.Qt.AlignLeft)
         self.header_1 = QtWidgets.QFrame(self.header_frame)
         self.header_1.setMinimumSize(QtCore.QSize(0, 0))
@@ -237,17 +236,18 @@ class MainMenuCustomerUi(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.lineEdit = QtWidgets.QLineEdit(self.header_1)
-        self.lineEdit.setStyleSheet("border-bottom:2px solid rgb(246, 174, 153);")
-        self.lineEdit.setObjectName("lineEdit")
-        self.horizontalLayout_6.addWidget(self.lineEdit)
-        self.pushButton_2 = QtWidgets.QPushButton(self.header_1)
-        self.pushButton_2.setText("")
+        self.search_box = QtWidgets.QLineEdit(self.header_1)
+        self.search_box.setStyleSheet("border-bottom:2px solid rgb(246, 174, 153);")
+        self.search_box.setObjectName("search_box")
+        self.horizontalLayout_6.addWidget(self.search_box)
+        self.search_button = QtWidgets.QPushButton(self.header_1)
+        self.search_button.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/icons/icons/search.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_2.setIcon(icon4)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_6.addWidget(self.pushButton_2)
+        self.search_button.setIcon(icon4)
+        self.search_button.setIconSize(QtCore.QSize(20, 20))
+        self.search_button.setObjectName("search_button")
+        self.horizontalLayout_6.addWidget(self.search_button)
         self.horizontalLayout_5.addWidget(self.header_1)
         self.header_2 = QtWidgets.QFrame(self.header_frame)
         self.header_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -257,9 +257,14 @@ class MainMenuCustomerUi(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton_3 = QtWidgets.QPushButton(self.header_2)
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_2.addWidget(self.pushButton_3)
+        self.refresh_button = QtWidgets.QPushButton(self.header_2)
+        self.refresh_button.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/refresh-cw.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.refresh_button.setIcon(icon5)
+        self.refresh_button.setIconSize(QtCore.QSize(20, 20))
+        self.refresh_button.setObjectName("refresh_button")
+        self.horizontalLayout_2.addWidget(self.refresh_button)
         self.pushButton = QtWidgets.QPushButton(self.header_2)
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_2.addWidget(self.pushButton)
@@ -293,6 +298,23 @@ class MainMenuCustomerUi(object):
         self.main_menu_content.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.main_menu_content.setFrameShadow(QtWidgets.QFrame.Raised)
         self.main_menu_content.setObjectName("main_menu_content")
+        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.main_menu_content)
+        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
+        self.app_list = QtWidgets.QListWidget(self.main_menu_content)
+        self.app_list.setStyleSheet("font: 700 22pt \"Comfortaa\";\n"
+"")
+        self.app_list.setObjectName("app_list")
+        self.horizontalLayout_10.addWidget(self.app_list)
+        self.report_button = QtWidgets.QPushButton(self.main_menu_content)
+        self.report_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 8px;\n"
+"border-color: white;\n"
+"padding: 4px;\n"
+"font: 300 20pt \"Comfortaa Light\";")
+        self.report_button.setObjectName("report_button")
+        self.horizontalLayout_10.addWidget(self.report_button, 0, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
         self.verticalLayout.addWidget(self.main_menu_content)
         self.footer_frame = QtWidgets.QFrame(self.main_menu_container)
         self.footer_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -358,12 +380,22 @@ class MainMenuCustomerUi(object):
         self.pushButton_12.setText(_translate("Dialog", "PushButton"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.Drop_menu_2), _translate("Dialog", "Page 2"))
         self.exit_button.setText(_translate("Dialog", "Exit "))
-        self.pushButton_3.setText(_translate("Dialog", "PushButton"))
         self.pushButton.setText(_translate("Dialog", "PushButton"))
         self.notify_button.setText(_translate("Dialog", "PushButton"))
         self.user_setting_button.setText(_translate("Dialog", "PushButton"))
         self.setting_button.setText(_translate("Dialog", "PushButton"))
-        self.label.setText(_translate("Dialog", "placeholder"))
-        self.label_2.setText(_translate("Dialog", "placeholder"))
-        self.label_3.setText(_translate("Dialog", "placeholder"))
+        self.report_button.setText(_translate("Dialog", "Report"))
+        self.label.setText(_translate("Dialog", "Bug Tracker v0.1"))
+        self.label_2.setText(_translate("Dialog", "website : ..."))
+        self.label_3.setText(_translate("Dialog", "Support : lmao@gmail.com"))
 import icons_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())

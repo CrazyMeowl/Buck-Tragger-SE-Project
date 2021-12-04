@@ -1,14 +1,15 @@
 import sys
-
+import time
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog,QApplication,QWidget,QMainWindow
 from os import environ
 import requests
-from signin_ui import SignInScreenUi
-from signup_ui import SignUpScreenUi
-from main_menu_admin_ui import MainMenuAdminUi
-from main_menu_customer_ui import MainMenuCustomerUi
+import signin_ui
+import signup_ui
+import main_menu_admin_ui
+import main_menu_customer_ui
+
 
 def suppress_qt_warnings():
 	environ["QT_DEVICE_PIXEL_RATIO"] = "0"
@@ -21,13 +22,7 @@ class MainMenuAdmin(QDialog):
 		QDialog.__init__(self)
 		loadUi("main_menu_admin.ui",self)
 '''
-'''
-id :  <class 'str'>
-requestAt :  <class 'str'>
-expiresIn :  <class 'float'>
-accessToken :  <class 'str'>
-roles : ['admin'] <class 'list'>
-'''
+
 class UserInformation():
 	def __init__(self,infolist):
 		self.id = infolist['id']
@@ -39,6 +34,14 @@ class UserInformation():
 			print('Logged in as an Admin')
 		elif 'customer' in self.roles:
 			print('Logged in as a Customer')
+
+class App():
+	def __init__(self,infolist):
+		self.name = infolist['name']
+		self.logoURL = infolist['logoURL']
+		self.companyId = infolist['companyId']
+		self.id = infolist['id']
+
 class WelcomeScreen(QDialog):
 	def __init__(self):
 		super(WelcomeScreen, self).__init__()
@@ -55,7 +58,7 @@ class WelcomeScreen(QDialog):
 class SignInScreen(QDialog):
 	def __init__(self):
 		super(SignInScreen, self).__init__()
-		self.ui = SignInScreenUi()
+		self.ui = signin_ui.Ui_Dialog()
 		self.ui.setupUi(self)
 		self.ui.password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 		self.ui.signin_button.clicked.connect(self.signinfunction)
@@ -90,14 +93,17 @@ class SignInScreen(QDialog):
 
 				if "admin" in user_info.roles:
 					print("ADMIN")
+					widget.setCurrentIndex(menu_admin_index)
 				if "customer" in user_info.roles:
 					print("Customer")
-				self.ui.error.setText("")
+					widget.setCurrentIndex(menu_customer_index)
+				#self.ui.error.setText("")
+
 
 class SignUpScreen(QDialog):
 	def __init__(self):
 		super(SignUpScreen, self).__init__()
-		self.ui = SignUpScreenUi()
+		self.ui = signup_ui.Ui_Dialog()
 		self.ui.setupUi(self)
 		self.ui.password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 		self.ui.confirm_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -152,15 +158,75 @@ class SignUpScreen(QDialog):
 class MainMenuAdminScreen(QDialog):
 	def __init__(self):
 		super(MainMenuAdminScreen, self).__init__()
-		self.ui = MainMenuAdminUi()
+		self.ui = main_menu_admin_ui.Ui_Dialog()
 		self.ui.setupUi(self)
 
 class MainMenuCustomerScreen(QDialog):
 	def __init__(self):
 		super(MainMenuCustomerScreen, self).__init__()
-		self.ui = MainMenuCustomerUi()
+		self.side_menu_state = False
+
+		self.ui = main_menu_customer_ui.Ui_Dialog()
 		self.ui.setupUi(self)
 
+		self.ui.slide_menu_container.setMaximumWidth(0)
+		self.ui.exit_button.clicked.connect(exit)
+		self.ui.menu_button.clicked.connect(self.trigger_side_menu)
+		self.ui.refresh_button.clicked.connect(self.reload_app_list)
+		self.ui.search_button.clicked.connect(self.search_for_app)
+		self.app_list = []
+		self.load_app_list()
+
+	def clear_app_list(self):
+		self.app_list = []
+		self.ui.app_list.clear()
+
+	def search_for_app(self):
+		self.clear_app_list()
+		keyword = self.ui.search_box.text()
+		link = 'https://bugtracker-api.azurewebsites.net/api/App/SearchByName/'
+		r = requests.get(link+keyword)
+		for i in r.json():
+			self.app_list.append(App(i))
+		for a in self.app_list:
+			self.ui.app_list.addItem(a.name)
+
+	def reload_app_list(self):
+		self.clear_app_list()
+		self.load_app_list()
+		
+	def load_app_list(self):
+		self.app_list = []
+		r = requests.get('https://bugtracker-api.azurewebsites.net/api/App/GetAll')
+		for i in r.json():
+			self.app_list.append(App(i))
+		for a in self.app_list:
+			self.ui.app_list.addItem(a.name)
+		'''
+		i = 0
+		while i < 100:
+			self.ui.app_list.addItem(str(i))
+			i = i + 1
+		'''
+	def trigger_side_menu(self):
+		
+		if self.side_menu_state == False:
+			self.ui.slide_menu_container.setMaximumWidth(250)
+		else:
+			self.ui.slide_menu_container.setMaximumWidth(0)
+		self.side_menu_state = not self.side_menu_state
+		
+	def add_it(self):
+
+
+			# Grab the item from the list box
+			item = self.additem_lineEdit.text()
+
+			# Add item to list
+			self.mylist_listWidget.addItem(item)
+
+			# Clear the item box
+			self.additem_lineEdit.setText("")
 # before main
 if __name__ == "__main__":
 	suppress_qt_warnings()
@@ -187,6 +253,7 @@ if __name__ == "__main__":
 	mainmenucustomerscreen = MainMenuCustomerScreen()
 	widget.addWidget(mainmenucustomerscreen)
 	menu_customer_index = 4
+
 	widget.setFixedHeight(800)
 	widget.setFixedWidth(1200)
 	widget.show()

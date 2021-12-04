@@ -76,8 +76,7 @@ QToolBox{
       <cursorShape>ArrowCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgb(107, 79, 79)
-</string>
+      <string notr="true">background-color:rgb(1, 86, 104)</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -247,8 +246,8 @@ font: 75 22pt &quot;Consolas&quot;;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>83</width>
-                 <height>48</height>
+                 <width>250</width>
+                 <height>674</height>
                 </rect>
                </property>
                <attribute name="icon">
@@ -492,7 +491,7 @@ font: 75 22pt &quot;Consolas&quot;;</string>
    <item>
     <widget class="QFrame" name="main_menu_container">
      <property name="styleSheet">
-      <string notr="true">background-color:rgb(72, 52, 52);</string>
+      <string notr="true">background-color:rgb(6, 100, 140)</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -550,7 +549,7 @@ font: 75 22pt &quot;Consolas&quot;;</string>
              <number>0</number>
             </property>
             <item alignment="Qt::AlignLeft|Qt::AlignTop">
-             <widget class="QPushButton" name="menu_buton">
+             <widget class="QPushButton" name="menu_button">
               <property name="styleSheet">
                <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
               </property>
@@ -603,20 +602,26 @@ font: 75 22pt &quot;Consolas&quot;;</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLineEdit" name="lineEdit">
+             <widget class="QLineEdit" name="search_box">
               <property name="styleSheet">
                <string notr="true">border-bottom:2px solid rgb(246, 174, 153);</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="search_button">
               <property name="text">
                <string/>
               </property>
               <property name="icon">
                <iconset resource="icons.qrc">
                 <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -648,9 +653,19 @@ font: 75 22pt &quot;Consolas&quot;;</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="refresh_button">
               <property name="text">
-               <string>PushButton</string>
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="icons.qrc">
+                <normaloff>:/icons/icons/refresh-cw.svg</normaloff>:/icons/icons/refresh-cw.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -732,6 +747,32 @@ font: 75 22pt &quot;Consolas&quot;;</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QListWidget" name="app_list">
+           <property name="styleSheet">
+            <string notr="true">font: 700 22pt &quot;Comfortaa&quot;;
+</string>
+           </property>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignRight|Qt::AlignBottom">
+          <widget class="QPushButton" name="report_button">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 8px;
+border-color: white;
+padding: 4px;
+font: 300 20pt &quot;Comfortaa Light&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Report</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item alignment="Qt::AlignBottom">
@@ -785,7 +826,7 @@ font: 75 22pt &quot;Consolas&quot;;</string>
             <item alignment="Qt::AlignBottom">
              <widget class="QLabel" name="label">
               <property name="text">
-               <string>placeholder</string>
+               <string>Bug Tracker v0.1</string>
               </property>
              </widget>
             </item>
@@ -819,7 +860,7 @@ font: 75 22pt &quot;Consolas&quot;;</string>
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>placeholder</string>
+               <string>website : ...</string>
               </property>
              </widget>
             </item>
@@ -853,7 +894,7 @@ font: 75 22pt &quot;Consolas&quot;;</string>
             <item>
              <widget class="QLabel" name="label_3">
               <property name="text">
-               <string>placeholder</string>
+               <string>Support : lmao@gmail.com</string>
               </property>
              </widget>
             </item>
