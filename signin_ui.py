@@ -105,6 +105,8 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog", "Sign in to your exiting account"))
         self.label_3.setText(_translate("Dialog", "Username"))
         self.label_4.setText(_translate("Dialog", "Password"))
+        self.username_box.setPlaceholderText(_translate("Dialog", "CrazyMeowl"))
+        self.password_box.setPlaceholderText(_translate("Dialog", "nice"))
         self.signin_button.setText(_translate("Dialog", "Sign in"))
         self.back_button.setText(_translate("Dialog", "Back"))
 

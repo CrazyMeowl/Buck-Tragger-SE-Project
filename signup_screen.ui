@@ -127,6 +127,9 @@ color:rgb(201, 150, 204);
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="placeholderText">
+     <string>abc123</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -174,6 +177,9 @@ font: 75 25pt &quot;Consolas&quot;;</string>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="placeholderText">
+     <string>password</string>
+    </property>
    </widget>
    <widget class="QLabel" name="error">
     <property name="geometry">
@@ -202,6 +208,9 @@ font: 75 25pt &quot;Consolas&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
+    </property>
+    <property name="placeholderText">
+     <string>password</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -297,6 +306,9 @@ font: 75 25pt &quot;Consolas&quot;;</string>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="placeholderText">
+     <string>Peter Parker</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="email_box">
     <property name="geometry">
@@ -309,6 +321,12 @@ font: 75 25pt &quot;Consolas&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>abc@gmail.com</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">

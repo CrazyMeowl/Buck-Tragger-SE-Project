@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'signup_account_screen.ui'
+# Form implementation generated from reading ui file 'signup_screen.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -122,6 +122,7 @@ class Ui_Dialog(object):
         self.email_box = QtWidgets.QLineEdit(self.bgwidget)
         self.email_box.setGeometry(QtCore.QRect(810, 230, 371, 41))
         self.email_box.setStyleSheet("")
+        self.email_box.setText("")
         self.email_box.setObjectName("email_box")
         self.label_7 = QtWidgets.QLabel(self.bgwidget)
         self.label_7.setGeometry(QtCore.QRect(700, 240, 91, 31))
@@ -153,12 +154,17 @@ class Ui_Dialog(object):
         self.label.setText(_translate("Dialog", "Sign up"))
         self.label_2.setText(_translate("Dialog", "Sign up for a new account"))
         self.signup_button.setText(_translate("Dialog", "Sign up"))
+        self.username_box.setPlaceholderText(_translate("Dialog", "abc123"))
         self.label_3.setText(_translate("Dialog", "Username"))
         self.label_4.setText(_translate("Dialog", "Password"))
+        self.password_box.setPlaceholderText(_translate("Dialog", "password"))
+        self.confirm_password_box.setPlaceholderText(_translate("Dialog", "password"))
         self.label_5.setText(_translate("Dialog", "Confirm password"))
         self.back_button.setText(_translate("Dialog", "Back"))
         self.create_company_button.setText(_translate("Dialog", "If you want to create as a company click this "))
         self.label_6.setText(_translate("Dialog", "Fullname"))
+        self.fullname_box.setPlaceholderText(_translate("Dialog", "Peter Parker"))
+        self.email_box.setPlaceholderText(_translate("Dialog", "abc@gmail.com"))
         self.label_7.setText(_translate("Dialog", "Email"))
         self.label_8.setText(_translate("Dialog", "Date of birth"))
 
