@@ -34,17 +34,8 @@ class Ui_Dialog(object):
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
         self.report_button.setObjectName("report_button")
-        self.title_box = QtWidgets.QLineEdit(self.backgournd_frame)
-        self.title_box.setGeometry(QtCore.QRect(10, 70, 1061, 41))
-        self.title_box.setStyleSheet("border-bottom:3px solid rgb(17, 60, 74);\n"
-"border-radius:1px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.title_box.setText("")
-        self.title_box.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft)
-        self.title_box.setObjectName("title_box")
         self.label = QtWidgets.QLabel(self.backgournd_frame)
-        self.label.setGeometry(QtCore.QRect(10, 20, 91, 51))
+        self.label.setGeometry(QtCore.QRect(10, 20, 161, 51))
         self.label.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label.setObjectName("label")
@@ -71,6 +62,19 @@ class Ui_Dialog(object):
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.description_box.setObjectName("description_box")
+        self.select_box = QtWidgets.QComboBox(self.backgournd_frame)
+        self.select_box.setGeometry(QtCore.QRect(10, 70, 261, 41))
+        self.select_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.select_box.setObjectName("select_box")
+        self.select_box.addItem("")
+        self.select_box.addItem("")
+        self.select_box.addItem("")
+        self.select_box.addItem("")
+        self.select_box.addItem("")
+        self.select_box.addItem("")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -79,11 +83,16 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.report_button.setText(_translate("Dialog", "Report"))
-        self.title_box.setPlaceholderText(_translate("Dialog", "Enter Your Title Here ..."))
-        self.label.setText(_translate("Dialog", "Title"))
+        self.label.setText(_translate("Dialog", "Problem"))
         self.label_2.setText(_translate("Dialog", "Description"))
         self.cancel_button.setText(_translate("Dialog", "Cancel"))
-        self.description_box.setPlaceholderText(_translate("Dialog", "Enter your description about the bug you found..."))
+        self.description_box.setPlaceholderText(_translate("Dialog", "Optional for when you chose else"))
+        self.select_box.setItemText(0, _translate("Dialog", "Server Connection"))
+        self.select_box.setItemText(1, _translate("Dialog", "Login/Logout"))
+        self.select_box.setItemText(2, _translate("Dialog", "Website"))
+        self.select_box.setItemText(3, _translate("Dialog", "App"))
+        self.select_box.setItemText(4, _translate("Dialog", "Search"))
+        self.select_box.setItemText(5, _translate("Dialog", "Else"))
 
 
 if __name__ == "__main__":

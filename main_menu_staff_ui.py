@@ -78,7 +78,7 @@ class Ui_Dialog(object):
         self.pushButton_6 = QtWidgets.QPushButton(self.header)
         self.pushButton_6.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../../../../../.designer/backup/logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_6.setIcon(icon)
         self.pushButton_6.setIconSize(QtCore.QSize(30, 30))
         self.pushButton_6.setObjectName("pushButton_6")
@@ -102,73 +102,98 @@ class Ui_Dialog(object):
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.toolBox = QtWidgets.QToolBox(self.side_menu_menu)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.toolBox.sizePolicy().hasHeightForWidth())
-        self.toolBox.setSizePolicy(sizePolicy)
-        self.toolBox.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.toolBox.setStyleSheet("")
-        self.toolBox.setObjectName("toolBox")
-        self.drop_menu_1 = QtWidgets.QWidget()
-        self.drop_menu_1.setGeometry(QtCore.QRect(0, 0, 250, 645))
-        self.drop_menu_1.setObjectName("drop_menu_1")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.drop_menu_1)
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_8.setSpacing(0)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.frame = QtWidgets.QFrame(self.drop_menu_1)
-        self.frame.setMaximumSize(QtCore.QSize(225, 16777215))
+        self.side_box = QtWidgets.QToolBox(self.side_menu_menu)
+        self.side_box.setStyleSheet("font: 700 15pt \"Ubuntu\";")
+        self.side_box.setObjectName("side_box")
+        self.app_page = QtWidgets.QWidget()
+        self.app_page.setGeometry(QtCore.QRect(0, 0, 250, 594))
+        self.app_page.setObjectName("app_page")
+        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.app_page)
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_13.setSpacing(0)
+        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
+        self.frame = QtWidgets.QFrame(self.app_page)
+        self.frame.setMinimumSize(QtCore.QSize(20, 0))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame)
-        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_10.setSpacing(0)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.pushButton_8 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.verticalLayout_10.addWidget(self.pushButton_8)
-        self.pushButton_9 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_9.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.verticalLayout_10.addWidget(self.pushButton_9)
-        self.pushButton_7 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.verticalLayout_10.addWidget(self.pushButton_7)
-        self.verticalLayout_8.addWidget(self.frame, 0, QtCore.Qt.AlignTop)
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/black/black/chevron-down.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.toolBox.addItem(self.drop_menu_1, icon1, "")
-        self.Drop_menu_2 = QtWidgets.QWidget()
-        self.Drop_menu_2.setGeometry(QtCore.QRect(0, 0, 250, 645))
-        self.Drop_menu_2.setObjectName("Drop_menu_2")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.Drop_menu_2)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setSpacing(0)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.frame_3 = QtWidgets.QFrame(self.Drop_menu_2)
-        self.frame_3.setMaximumSize(QtCore.QSize(225, 16777215))
+        self.horizontalLayout_13.addWidget(self.frame)
+        self.app_list = QtWidgets.QListWidget(self.app_page)
+        self.app_list.setStyleSheet("")
+        self.app_list.setObjectName("app_list")
+        self.horizontalLayout_13.addWidget(self.app_list)
+        self.side_box.addItem(self.app_page, "")
+        self.report_page = QtWidgets.QWidget()
+        self.report_page.setGeometry(QtCore.QRect(0, 0, 250, 594))
+        self.report_page.setObjectName("report_page")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.report_page)
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12.setSpacing(0)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.frame_3 = QtWidgets.QFrame(self.report_page)
+        self.frame_3.setMinimumSize(QtCore.QSize(20, 0))
+        self.frame_3.setMaximumSize(QtCore.QSize(20, 16777215))
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.frame_3)
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_11.setSpacing(0)
-        self.verticalLayout_11.setObjectName("verticalLayout_11")
-        self.pushButton_11 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_11.setObjectName("pushButton_11")
-        self.verticalLayout_11.addWidget(self.pushButton_11)
-        self.pushButton_10 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.verticalLayout_11.addWidget(self.pushButton_10)
-        self.pushButton_12 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_12.setObjectName("pushButton_12")
-        self.verticalLayout_11.addWidget(self.pushButton_12)
-        self.verticalLayout_9.addWidget(self.frame_3, 0, QtCore.Qt.AlignTop)
-        self.toolBox.addItem(self.Drop_menu_2, icon1, "")
-        self.verticalLayout_7.addWidget(self.toolBox)
+        self.horizontalLayout_12.addWidget(self.frame_3)
+        self.rerport_box = QtWidgets.QToolBox(self.report_page)
+        self.rerport_box.setObjectName("rerport_box")
+        self.new_report_page = QtWidgets.QWidget()
+        self.new_report_page.setGeometry(QtCore.QRect(0, 0, 230, 520))
+        self.new_report_page.setObjectName("new_report_page")
+        self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.new_report_page)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.frame_5 = QtWidgets.QFrame(self.new_report_page)
+        self.frame_5.setMinimumSize(QtCore.QSize(20, 0))
+        self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_5.setObjectName("frame_5")
+        self.horizontalLayout_14.addWidget(self.frame_5)
+        self.report_list = QtWidgets.QListWidget(self.new_report_page)
+        self.report_list.setObjectName("report_list")
+        self.horizontalLayout_14.addWidget(self.report_list)
+        self.rerport_box.addItem(self.new_report_page, "")
+        self.old_report_page = QtWidgets.QWidget()
+        self.old_report_page.setGeometry(QtCore.QRect(0, 0, 230, 520))
+        self.old_report_page.setObjectName("old_report_page")
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.old_report_page)
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        self.frame_6 = QtWidgets.QFrame(self.old_report_page)
+        self.frame_6.setMinimumSize(QtCore.QSize(20, 0))
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.horizontalLayout_15.addWidget(self.frame_6)
+        self.old_report_list = QtWidgets.QListWidget(self.old_report_page)
+        self.old_report_list.setStyleSheet("")
+        self.old_report_list.setObjectName("old_report_list")
+        self.horizontalLayout_15.addWidget(self.old_report_list)
+        self.rerport_box.addItem(self.old_report_page, "")
+        self.horizontalLayout_12.addWidget(self.rerport_box)
+        self.side_box.addItem(self.report_page, "")
+        self.bug_page = QtWidgets.QWidget()
+        self.bug_page.setGeometry(QtCore.QRect(0, 0, 250, 594))
+        self.bug_page.setObjectName("bug_page")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.bug_page)
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_9.setSpacing(0)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.frame_4 = QtWidgets.QFrame(self.bug_page)
+        self.frame_4.setMinimumSize(QtCore.QSize(20, 0))
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.horizontalLayout_9.addWidget(self.frame_4)
+        self.bug_list = QtWidgets.QListWidget(self.bug_page)
+        self.bug_list.setObjectName("bug_list")
+        self.horizontalLayout_9.addWidget(self.bug_list)
+        self.side_box.addItem(self.bug_page, "")
+        self.verticalLayout_7.addWidget(self.side_box)
         self.verticalLayout_6.addWidget(self.side_menu_menu)
         self.footer = QtWidgets.QFrame(self.frame_2)
         self.footer.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -181,18 +206,18 @@ class Ui_Dialog(object):
         self.signout_button = QtWidgets.QPushButton(self.footer)
         self.signout_button.setStyleSheet("font: 20pt \"Consolas\";\n"
 "color : rgb(221, 221, 221);")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/log-out.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.signout_button.setIcon(icon2)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/log-out.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.signout_button.setIcon(icon1)
         self.signout_button.setIconSize(QtCore.QSize(30, 30))
         self.signout_button.setObjectName("signout_button")
         self.verticalLayout_4.addWidget(self.signout_button, 0, QtCore.Qt.AlignLeft)
         self.exit_button = QtWidgets.QPushButton(self.footer)
         self.exit_button.setStyleSheet("font: 20pt \"Consolas\";\n"
 "color : rgb(221, 221, 221);")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.exit_button.setIcon(icon3)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_button.setIcon(icon2)
         self.exit_button.setIconSize(QtCore.QSize(30, 30))
         self.exit_button.setObjectName("exit_button")
         self.verticalLayout_4.addWidget(self.exit_button, 0, QtCore.Qt.AlignLeft)
@@ -205,7 +230,7 @@ class Ui_Dialog(object):
         self.main_menu_container.setFrameShadow(QtWidgets.QFrame.Raised)
         self.main_menu_container.setObjectName("main_menu_container")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.main_menu_container)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setContentsMargins(3, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.header_frame = QtWidgets.QFrame(self.main_menu_container)
@@ -225,9 +250,9 @@ class Ui_Dialog(object):
         self.menu_button = QtWidgets.QPushButton(self.header_0)
         self.menu_button.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.menu_button.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.menu_button.setIcon(icon4)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.menu_button.setIcon(icon3)
         self.menu_button.setIconSize(QtCore.QSize(25, 25))
         self.menu_button.setObjectName("menu_button")
         self.horizontalLayout_7.addWidget(self.menu_button, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
@@ -249,9 +274,9 @@ class Ui_Dialog(object):
         self.horizontalLayout_6.addWidget(self.search_box)
         self.search_button = QtWidgets.QPushButton(self.header_1)
         self.search_button.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/search.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.search_button.setIcon(icon5)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/icons/icons/search.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.search_button.setIcon(icon4)
         self.search_button.setIconSize(QtCore.QSize(20, 20))
         self.search_button.setObjectName("search_button")
         self.horizontalLayout_6.addWidget(self.search_button)
@@ -266,14 +291,14 @@ class Ui_Dialog(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.refresh_button = QtWidgets.QPushButton(self.header_2)
         self.refresh_button.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/refresh-cw.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.refresh_button.setIcon(icon6)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/refresh-cw.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.refresh_button.setIcon(icon5)
         self.refresh_button.setIconSize(QtCore.QSize(20, 20))
         self.refresh_button.setObjectName("refresh_button")
         self.horizontalLayout_2.addWidget(self.refresh_button)
         self.horizontalLayout_5.addWidget(self.header_2)
-        self.verticalLayout.addWidget(self.header_frame, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout.addWidget(self.header_frame)
         self.main_menu_content = QtWidgets.QFrame(self.main_menu_container)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -285,24 +310,359 @@ class Ui_Dialog(object):
         self.main_menu_content.setFrameShadow(QtWidgets.QFrame.Raised)
         self.main_menu_content.setObjectName("main_menu_content")
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.main_menu_content)
-        self.horizontalLayout_10.setContentsMargins(0, 0, 5, 0)
+        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.app_list = QtWidgets.QListWidget(self.main_menu_content)
-        self.app_list.setStyleSheet("font: 700 22pt \"Comfortaa\";\n"
-"")
-        self.app_list.setObjectName("app_list")
-        self.horizontalLayout_10.addWidget(self.app_list)
-        self.report_button = QtWidgets.QPushButton(self.main_menu_content)
-        self.report_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        self.pager = QtWidgets.QStackedWidget(self.main_menu_content)
+        self.pager.setObjectName("pager")
+        self.test_page_1 = QtWidgets.QWidget()
+        self.test_page_1.setObjectName("test_page_1")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.test_page_1)
+        self.plainTextEdit.setGeometry(QtCore.QRect(0, 0, 951, 721))
+        self.plainTextEdit.setStyleSheet("font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.pager.addWidget(self.test_page_1)
+        self.test_page_2 = QtWidgets.QWidget()
+        self.test_page_2.setObjectName("test_page_2")
+        self.label_5 = QtWidgets.QLabel(self.test_page_2)
+        self.label_5.setGeometry(QtCore.QRect(0, 10, 191, 41))
+        self.label_5.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_5.setObjectName("label_5")
+        self.create_bug_button = QtWidgets.QPushButton(self.test_page_2)
+        self.create_bug_button.setGeometry(QtCore.QRect(200, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.create_bug_button.sizePolicy().hasHeightForWidth())
+        self.create_bug_button.setSizePolicy(sizePolicy)
+        self.create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
-"border-radius: 10px;\n"
+"border-radius: 20px;\n"
 "border-color: white;\n"
 "padding: 2px;\n"
-"font: 700 20pt \"Ubuntu\";")
-        self.report_button.setObjectName("report_button")
-        self.horizontalLayout_10.addWidget(self.report_button, 0, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.create_bug_button.setObjectName("create_bug_button")
+        self.report_description_box = QtWidgets.QPlainTextEdit(self.test_page_2)
+        self.report_description_box.setEnabled(False)
+        self.report_description_box.setGeometry(QtCore.QRect(0, 170, 821, 451))
+        self.report_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.report_description_box.setObjectName("report_description_box")
+        self.label_6 = QtWidgets.QLabel(self.test_page_2)
+        self.label_6.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.label_6.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_6.setObjectName("label_6")
+        self.report_title_box = QtWidgets.QPlainTextEdit(self.test_page_2)
+        self.report_title_box.setEnabled(False)
+        self.report_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
+        self.report_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.report_title_box.setObjectName("report_title_box")
+        self.delete_report_button = QtWidgets.QPushButton(self.test_page_2)
+        self.delete_report_button.setGeometry(QtCore.QRect(0, 670, 191, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.delete_report_button.sizePolicy().hasHeightForWidth())
+        self.delete_report_button.setSizePolicy(sizePolicy)
+        self.delete_report_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 18px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.delete_report_button.setObjectName("delete_report_button")
+        self.pager.addWidget(self.test_page_2)
+        self.test_page_3 = QtWidgets.QWidget()
+        self.test_page_3.setObjectName("test_page_3")
+        self.label_7 = QtWidgets.QLabel(self.test_page_3)
+        self.label_7.setGeometry(QtCore.QRect(0, 10, 91, 41))
+        self.label_7.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_7.setObjectName("label_7")
+        self.label_10 = QtWidgets.QLabel(self.test_page_3)
+        self.label_10.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.label_10.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_10.setObjectName("label_10")
+        self.bug_title_box = QtWidgets.QPlainTextEdit(self.test_page_3)
+        self.bug_title_box.setEnabled(False)
+        self.bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
+        self.bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.bug_title_box.setObjectName("bug_title_box")
+        self.bug_description_box = QtWidgets.QPlainTextEdit(self.test_page_3)
+        self.bug_description_box.setEnabled(False)
+        self.bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
+        self.bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.bug_description_box.setObjectName("bug_description_box")
+        self.bug_serverity_box = QtWidgets.QPlainTextEdit(self.test_page_3)
+        self.bug_serverity_box.setEnabled(False)
+        self.bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 221, 51))
+        self.bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.bug_serverity_box.setPlainText("")
+        self.bug_serverity_box.setPlaceholderText("")
+        self.bug_serverity_box.setObjectName("bug_serverity_box")
+        self.label_11 = QtWidgets.QLabel(self.test_page_3)
+        self.label_11.setGeometry(QtCore.QRect(0, 440, 181, 41))
+        self.label_11.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_11.setObjectName("label_11")
+        self.bug_status_box = QtWidgets.QPlainTextEdit(self.test_page_3)
+        self.bug_status_box.setEnabled(False)
+        self.bug_status_box.setGeometry(QtCore.QRect(0, 600, 221, 51))
+        self.bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.bug_status_box.setPlaceholderText("")
+        self.bug_status_box.setObjectName("bug_status_box")
+        self.label_12 = QtWidgets.QLabel(self.test_page_3)
+        self.label_12.setGeometry(QtCore.QRect(0, 550, 131, 41))
+        self.label_12.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_12.setObjectName("label_12")
+        self.update_bug_button = QtWidgets.QPushButton(self.test_page_3)
+        self.update_bug_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.update_bug_button.sizePolicy().hasHeightForWidth())
+        self.update_bug_button.setSizePolicy(sizePolicy)
+        self.update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.update_bug_button.setObjectName("update_bug_button")
+        self.pager.addWidget(self.test_page_3)
+        self.change_bug_page = QtWidgets.QWidget()
+        self.change_bug_page.setObjectName("change_bug_page")
+        self.label_9 = QtWidgets.QLabel(self.change_bug_page)
+        self.label_9.setGeometry(QtCore.QRect(0, 10, 91, 41))
+        self.label_9.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_9.setObjectName("label_9")
+        self.confirm_update_bug_button = QtWidgets.QPushButton(self.change_bug_page)
+        self.confirm_update_bug_button.setGeometry(QtCore.QRect(180, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.confirm_update_bug_button.sizePolicy().hasHeightForWidth())
+        self.confirm_update_bug_button.setSizePolicy(sizePolicy)
+        self.confirm_update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.confirm_update_bug_button.setObjectName("confirm_update_bug_button")
+        self.update_bug_description_box = QtWidgets.QPlainTextEdit(self.change_bug_page)
+        self.update_bug_description_box.setEnabled(True)
+        self.update_bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
+        self.update_bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_bug_description_box.setObjectName("update_bug_description_box")
+        self.label_13 = QtWidgets.QLabel(self.change_bug_page)
+        self.label_13.setGeometry(QtCore.QRect(0, 550, 131, 41))
+        self.label_13.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_13.setObjectName("label_13")
+        self.label_14 = QtWidgets.QLabel(self.change_bug_page)
+        self.label_14.setGeometry(QtCore.QRect(0, 440, 181, 41))
+        self.label_14.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_14.setObjectName("label_14")
+        self.update_bug_title_box = QtWidgets.QPlainTextEdit(self.change_bug_page)
+        self.update_bug_title_box.setEnabled(True)
+        self.update_bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
+        self.update_bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_bug_title_box.setObjectName("update_bug_title_box")
+        self.label_15 = QtWidgets.QLabel(self.change_bug_page)
+        self.label_15.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.label_15.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_15.setObjectName("label_15")
+        self.delete_bug_button = QtWidgets.QPushButton(self.change_bug_page)
+        self.delete_bug_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.delete_bug_button.sizePolicy().hasHeightForWidth())
+        self.delete_bug_button.setSizePolicy(sizePolicy)
+        self.delete_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.delete_bug_button.setObjectName("delete_bug_button")
+        self.update_bug_serverity_box = QtWidgets.QComboBox(self.change_bug_page)
+        self.update_bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 171, 51))
+        self.update_bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_bug_serverity_box.setObjectName("update_bug_serverity_box")
+        self.update_bug_serverity_box.addItem("")
+        self.update_bug_serverity_box.addItem("")
+        self.update_bug_serverity_box.addItem("")
+        self.update_bug_serverity_box.addItem("")
+        self.update_bug_serverity_box.addItem("")
+        self.update_bug_status_box = QtWidgets.QComboBox(self.change_bug_page)
+        self.update_bug_status_box.setGeometry(QtCore.QRect(0, 600, 171, 51))
+        self.update_bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_bug_status_box.setObjectName("update_bug_status_box")
+        self.update_bug_status_box.addItem("")
+        self.update_bug_status_box.addItem("")
+        self.update_bug_status_box.addItem("")
+        self.update_bug_status_box.addItem("")
+        self.cancel_update_bug_button = QtWidgets.QPushButton(self.change_bug_page)
+        self.cancel_update_bug_button.setGeometry(QtCore.QRect(360, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cancel_update_bug_button.sizePolicy().hasHeightForWidth())
+        self.cancel_update_bug_button.setSizePolicy(sizePolicy)
+        self.cancel_update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.cancel_update_bug_button.setObjectName("cancel_update_bug_button")
+        self.pager.addWidget(self.change_bug_page)
+        self.create_bug_page = QtWidgets.QWidget()
+        self.create_bug_page.setObjectName("create_bug_page")
+        self.create_bug_serverity_box = QtWidgets.QComboBox(self.create_bug_page)
+        self.create_bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 171, 51))
+        self.create_bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_bug_serverity_box.setObjectName("create_bug_serverity_box")
+        self.create_bug_serverity_box.addItem("")
+        self.create_bug_serverity_box.addItem("")
+        self.create_bug_serverity_box.addItem("")
+        self.create_bug_serverity_box.addItem("")
+        self.create_bug_serverity_box.addItem("")
+        self.label_16 = QtWidgets.QLabel(self.create_bug_page)
+        self.label_16.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.label_16.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_16.setObjectName("label_16")
+        self.label_17 = QtWidgets.QLabel(self.create_bug_page)
+        self.label_17.setGeometry(QtCore.QRect(0, 10, 91, 41))
+        self.label_17.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_17.setObjectName("label_17")
+        self.create_bug_status_box = QtWidgets.QComboBox(self.create_bug_page)
+        self.create_bug_status_box.setGeometry(QtCore.QRect(0, 600, 171, 51))
+        self.create_bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_bug_status_box.setObjectName("create_bug_status_box")
+        self.create_bug_status_box.addItem("")
+        self.create_bug_status_box.addItem("")
+        self.create_bug_status_box.addItem("")
+        self.create_bug_status_box.addItem("")
+        self.cancel_create_bug_button = QtWidgets.QPushButton(self.create_bug_page)
+        self.cancel_create_bug_button.setGeometry(QtCore.QRect(180, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cancel_create_bug_button.sizePolicy().hasHeightForWidth())
+        self.cancel_create_bug_button.setSizePolicy(sizePolicy)
+        self.cancel_create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.cancel_create_bug_button.setObjectName("cancel_create_bug_button")
+        self.confirm_create_bug_button = QtWidgets.QPushButton(self.create_bug_page)
+        self.confirm_create_bug_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.confirm_create_bug_button.sizePolicy().hasHeightForWidth())
+        self.confirm_create_bug_button.setSizePolicy(sizePolicy)
+        self.confirm_create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.confirm_create_bug_button.setObjectName("confirm_create_bug_button")
+        self.label_18 = QtWidgets.QLabel(self.create_bug_page)
+        self.label_18.setGeometry(QtCore.QRect(0, 550, 131, 41))
+        self.label_18.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_18.setObjectName("label_18")
+        self.label_19 = QtWidgets.QLabel(self.create_bug_page)
+        self.label_19.setGeometry(QtCore.QRect(0, 440, 181, 41))
+        self.label_19.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_19.setObjectName("label_19")
+        self.create_bug_description_box = QtWidgets.QPlainTextEdit(self.create_bug_page)
+        self.create_bug_description_box.setEnabled(True)
+        self.create_bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
+        self.create_bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_bug_description_box.setObjectName("create_bug_description_box")
+        self.create_bug_title_box = QtWidgets.QPlainTextEdit(self.create_bug_page)
+        self.create_bug_title_box.setEnabled(True)
+        self.create_bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
+        self.create_bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_bug_title_box.setObjectName("create_bug_title_box")
+        self.pager.addWidget(self.create_bug_page)
+        self.horizontalLayout_10.addWidget(self.pager)
         self.verticalLayout.addWidget(self.main_menu_content)
         self.footer_frame = QtWidgets.QFrame(self.main_menu_container)
         self.footer_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -360,25 +720,87 @@ class Ui_Dialog(object):
         self.horizontalLayout.addWidget(self.main_menu_container)
 
         self.retranslateUi(Dialog)
-        self.toolBox.setCurrentIndex(1)
+        self.side_box.setCurrentIndex(1)
+        self.rerport_box.setCurrentIndex(1)
+        self.pager.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_4.setText(_translate("Dialog", "Bug Tracker"))
-        self.pushButton_8.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_9.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_7.setText(_translate("Dialog", "PushButton"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.drop_menu_1), _translate("Dialog", "Page 1"))
-        self.pushButton_11.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_10.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_12.setText(_translate("Dialog", "PushButton"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.Drop_menu_2), _translate("Dialog", "Page 2"))
+        self.side_box.setItemText(self.side_box.indexOf(self.app_page), _translate("Dialog", "➤ App"))
+        self.rerport_box.setItemText(self.rerport_box.indexOf(self.new_report_page), _translate("Dialog", "➤ Report"))
+        self.rerport_box.setItemText(self.rerport_box.indexOf(self.old_report_page), _translate("Dialog", "➤ Old report"))
+        self.side_box.setItemText(self.side_box.indexOf(self.report_page), _translate("Dialog", "➤ Report"))
+        self.side_box.setItemText(self.side_box.indexOf(self.bug_page), _translate("Dialog", "➤ Bug"))
         self.signout_button.setText(_translate("Dialog", "Sign Out"))
         self.exit_button.setText(_translate("Dialog", "Exit "))
         self.search_box.setPlaceholderText(_translate("Dialog", "Enter app name you wanted to search here ..."))
-        self.report_button.setText(_translate("Dialog", "Report"))
+        self.plainTextEdit.setPlainText(_translate("Dialog", "For starter :\n"
+"    Step 1: Open the side menu\n"
+"    Step 2: Select an App\n"
+"        Step 2.1: Select a Report\n"
+"            Step 2.1.1: Read Report/Create Bug/Delete Report\n"
+"        Step 2.2: Select a Bug\n"
+"            Step 2.2.2: Read Bug/Update Bug/Delete Bug\n"
+"\n"
+""))
+        self.label_5.setText(_translate("Dialog", "Problem"))
+        self.create_bug_button.setText(_translate("Dialog", "Create Bug"))
+        self.report_description_box.setPlaceholderText(_translate("Dialog", "\"None\""))
+        self.label_6.setText(_translate("Dialog", "Description"))
+        self.report_title_box.setPlaceholderText(_translate("Dialog", "Select a report first"))
+        self.delete_report_button.setText(_translate("Dialog", "Delete Report"))
+        self.label_7.setText(_translate("Dialog", "Title"))
+        self.label_10.setText(_translate("Dialog", "Description"))
+        self.bug_title_box.setPlaceholderText(_translate("Dialog", "Select a bug first"))
+        self.bug_description_box.setPlaceholderText(_translate("Dialog", "\"None\""))
+        self.label_11.setText(_translate("Dialog", "Serverity"))
+        self.label_12.setText(_translate("Dialog", "Status"))
+        self.update_bug_button.setText(_translate("Dialog", "Update Bug"))
+        self.label_9.setText(_translate("Dialog", "Title"))
+        self.confirm_update_bug_button.setText(_translate("Dialog", "Update Bug"))
+        self.update_bug_description_box.setPlainText(_translate("Dialog", "Date : \n"
+"Tested by :\n"
+"Cause by :"))
+        self.update_bug_description_box.setPlaceholderText(_translate("Dialog", "Enter the description here please"))
+        self.label_13.setText(_translate("Dialog", "Status"))
+        self.label_14.setText(_translate("Dialog", "Serverity"))
+        self.update_bug_title_box.setPlaceholderText(_translate("Dialog", "Please do not leave blank"))
+        self.label_15.setText(_translate("Dialog", "Description"))
+        self.delete_bug_button.setText(_translate("Dialog", "Delete Bug"))
+        self.update_bug_serverity_box.setItemText(0, _translate("Dialog", "Small"))
+        self.update_bug_serverity_box.setItemText(1, _translate("Dialog", "Normal"))
+        self.update_bug_serverity_box.setItemText(2, _translate("Dialog", "Bad"))
+        self.update_bug_serverity_box.setItemText(3, _translate("Dialog", "Extreme"))
+        self.update_bug_serverity_box.setItemText(4, _translate("Dialog", "EMEGENCY"))
+        self.update_bug_status_box.setItemText(0, _translate("Dialog", "Working"))
+        self.update_bug_status_box.setItemText(1, _translate("Dialog", "Fixed"))
+        self.update_bug_status_box.setItemText(2, _translate("Dialog", "Revised"))
+        self.update_bug_status_box.setItemText(3, _translate("Dialog", "Approved"))
+        self.cancel_update_bug_button.setText(_translate("Dialog", "Cancel"))
+        self.create_bug_serverity_box.setItemText(0, _translate("Dialog", "Small"))
+        self.create_bug_serverity_box.setItemText(1, _translate("Dialog", "Normal"))
+        self.create_bug_serverity_box.setItemText(2, _translate("Dialog", "Bad"))
+        self.create_bug_serverity_box.setItemText(3, _translate("Dialog", "Extreme"))
+        self.create_bug_serverity_box.setItemText(4, _translate("Dialog", "EMEGENCY"))
+        self.label_16.setText(_translate("Dialog", "Description"))
+        self.label_17.setText(_translate("Dialog", "Title"))
+        self.create_bug_status_box.setItemText(0, _translate("Dialog", "Working"))
+        self.create_bug_status_box.setItemText(1, _translate("Dialog", "Fixed"))
+        self.create_bug_status_box.setItemText(2, _translate("Dialog", "Revised"))
+        self.create_bug_status_box.setItemText(3, _translate("Dialog", "Approved"))
+        self.cancel_create_bug_button.setText(_translate("Dialog", "Cancel"))
+        self.confirm_create_bug_button.setText(_translate("Dialog", "Create Bug"))
+        self.label_18.setText(_translate("Dialog", "Status"))
+        self.label_19.setText(_translate("Dialog", "Serverity"))
+        self.create_bug_description_box.setPlainText(_translate("Dialog", "Date : \n"
+"Tested by :\n"
+"Cause by :\n"
+"Desc on report: "))
+        self.create_bug_description_box.setPlaceholderText(_translate("Dialog", "Enter the description here please"))
+        self.create_bug_title_box.setPlaceholderText(_translate("Dialog", "Please do not leave blank"))
         self.label.setText(_translate("Dialog", "Bug Tracker v1"))
         self.label_2.setText(_translate("Dialog", "Our website:  "))
         self.website_button.setText(_translate("Dialog", "clickme.com"))

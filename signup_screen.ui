@@ -95,9 +95,9 @@ color:rgb(201, 150, 204);
    <widget class="QPushButton" name="signup_button">
     <property name="geometry">
      <rect>
-      <x>1000</x>
+      <x>1030</x>
       <y>580</y>
-      <width>181</width>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -351,7 +351,7 @@ font: 75 25pt &quot;Consolas&quot;;</string>
      <rect>
       <x>810</x>
       <y>580</y>
-      <width>171</width>
+      <width>201</width>
       <height>41</height>
      </rect>
     </property>
@@ -362,6 +362,12 @@ background-color:rgb(145, 107, 191);
 border-radius:15px;
 border-color: rgb(84, 255, 5);
 color: rgb(61, 44, 141);};</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="displayFormat">
+     <string>d/M/yyyy</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">

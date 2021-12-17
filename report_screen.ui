@@ -66,37 +66,12 @@ color : white;</string>
      <string>Report</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="title_box">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>1061</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-bottom:3px solid rgb(17, 60, 74);
-border-radius:1px;
-font: 500 italic 20pt &quot;Ubuntu&quot;;
-color: rgb(221, 221, 221);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-    </property>
-    <property name="placeholderText">
-     <string>Enter Your Title Here ...</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>91</width>
+      <width>161</width>
       <height>51</height>
      </rect>
     </property>
@@ -105,7 +80,7 @@ color: rgb(221, 221, 221);</string>
 color: rgb(17, 60, 74);</string>
     </property>
     <property name="text">
-     <string>Title</string>
+     <string>Problem</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -164,8 +139,54 @@ font: 500 italic 20pt &quot;Ubuntu&quot;;
 color: rgb(221, 221, 221);</string>
     </property>
     <property name="placeholderText">
-     <string>Enter your description about the bug you found...</string>
+     <string>Optional for when you chose else</string>
     </property>
+   </widget>
+   <widget class="QComboBox" name="select_box">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:10px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Server Connection</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Login/Logout</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Website</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>App</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Else</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>

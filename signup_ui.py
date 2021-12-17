@@ -51,7 +51,7 @@ class Ui_Dialog(object):
 "")
         self.label_2.setObjectName("label_2")
         self.signup_button = QtWidgets.QPushButton(self.bgwidget)
-        self.signup_button.setGeometry(QtCore.QRect(1000, 580, 181, 41))
+        self.signup_button.setGeometry(QtCore.QRect(1030, 580, 151, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(False)
@@ -130,13 +130,14 @@ class Ui_Dialog(object):
 "font: 75 25pt \"Consolas\";")
         self.label_7.setObjectName("label_7")
         self.birthdate_box = QtWidgets.QDateEdit(self.bgwidget)
-        self.birthdate_box.setGeometry(QtCore.QRect(810, 580, 171, 41))
+        self.birthdate_box.setGeometry(QtCore.QRect(810, 580, 201, 41))
         self.birthdate_box.setStyleSheet("QDateEdit{\n"
 "font: 20pt \"Consolas\";\n"
 "background-color:rgb(145, 107, 191);\n"
 "border-radius:15px;\n"
 "border-color: rgb(84, 255, 5);\n"
 "color: rgb(61, 44, 141);};")
+        self.birthdate_box.setAlignment(QtCore.Qt.AlignCenter)
         self.birthdate_box.setObjectName("birthdate_box")
         self.label_8 = QtWidgets.QLabel(self.bgwidget)
         self.label_8.setGeometry(QtCore.QRect(560, 590, 241, 31))
@@ -166,6 +167,7 @@ class Ui_Dialog(object):
         self.fullname_box.setPlaceholderText(_translate("Dialog", "Peter Parker"))
         self.email_box.setPlaceholderText(_translate("Dialog", "abc@gmail.com"))
         self.label_7.setText(_translate("Dialog", "Email"))
+        self.birthdate_box.setDisplayFormat(_translate("Dialog", "d/M/yyyy"))
         self.label_8.setText(_translate("Dialog", "Date of birth"))
 
 

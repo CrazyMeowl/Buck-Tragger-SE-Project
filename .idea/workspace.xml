@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f57a0c43-aef1-4288-8baf-e6cb90f1e757" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu_admin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_admin.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu_admin_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_admin_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu_customer.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_customer.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_menu_customer_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_customer_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin_screen.ui" beforeDir="false" afterPath="$PROJECT_DIR$/signin_screen.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signin_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/signin_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_menu_staff.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_staff.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_menu_staff_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_menu_staff_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report_screen.ui" beforeDir="false" afterPath="$PROJECT_DIR$/report_screen.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/report_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup_screen.ui" beforeDir="false" afterPath="$PROJECT_DIR$/signup_screen.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/signup_ui.py" afterDir="false" />
     </list>
@@ -29,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f57a0c43-aef1-4288-8baf-e6cb90f1e757" name="Default Changelist" comment="" />

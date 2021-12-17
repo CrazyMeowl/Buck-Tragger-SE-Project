@@ -75,7 +75,6 @@ try:
 			self.id = infolist['id']
 			self.serverities_list = ["Small","Normal","Bad","Extreme","EMERGENCY"]
 			self.status_list = ["Working","Fixed","Revised","Approved"]
-
 	class WelcomeScreen(QDialog):
 		def __init__(self):
 			super(WelcomeScreen, self).__init__()
@@ -333,95 +332,27 @@ try:
 			self.ui.refresh_button.clicked.connect(self.reload_app_list)
 			self.ui.search_button.clicked.connect(self.search_for_app)
 			#self.ui.report_button.clicked.connect(self.report_app)
-			self.ui.app_list.itemClicked.connect(self.load_report_bug)
-			#self.ui.app_list.itemClicked.connect(self.show_app_page)
-			self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
+			self.ui.app_list.itemDoubleClicked.connect(self.load_report_bug)
 
-			self.ui.old_report_list.itemClicked.connect(lambda: self.load_report_info("old"))
-			#self.ui.report_list.itemDoubleClicked.connect(self.load_report_info)
-			self.ui.bug_list.itemClicked.connect(self.load_bug_info)
-			#self.ui.bug_list.itemDoubleClicked.connect(self.load_bug_info)
+			self.ui.app_list.itemClicked.connect(self.show_app_page)
+
+			self.ui.report_list.itemClicked.connect(self.show_report_page)
+			self.ui.report_list.itemDoubleClicked.connect(self.load_report_info)
+
+			self.ui.bug_list.itemClicked.connect(self.show_bug_page)
+			self.ui.bug_list.itemDoubleClicked.connect(self.load_bug_info)
+
 			self.ui.website_button.clicked.connect(self.open_link)
-
 			self.ui.email_button.clicked.connect(self.open_email)
 
 			self.ui.app_list.itemSelectionChanged.connect(self.on_change_app)
 
 			self.ui.signout_button.clicked.connect(self.signout)
-
-			self.ui.create_bug_button.clicked.connect(self.load_report_to_bug)
-
-			self.ui.update_bug_button.clicked.connect(self.load_bug_to_update)
-
-			self.ui.cancel_create_bug_button.clicked.connect(self.show_report_page)
-
-			self.ui.cancel_update_bug_button.clicked.connect(self.show_bug_page)
-
-			self.ui.confirm_create_bug_button.clicked.connect(self.create_bug)
-
-			self.ui.confirm_update_bug_button.clicked.connect(self.update_bug)
-
-			self.ui.delete_report_button.clicked.connect(self.delete_report)
-
 			self.app_list = []
 			self.report_list = []
-			self.old_report_list = []
 			self.bug_list = []
 			self.add_id = None
 			#self.load_app_list()
-		def create_bug(self):
-			print("Created")
-			print(self.ui.create_bug_serverity_box.currentIndex())
-			print(self.ui.create_bug_status_box.currentIndex())
-
-		def update_bug(self):
-			pass
-
-		def delete_report(self):
-			msg = QMessageBox()
-			msg.setIcon(QMessageBox.Information)
-			msg.setWindowTitle("Caution !")
-			msg.setWindowIcon(QtGui.QIcon('logo.png'))
-			#msg.setStyleSheet("background-color: rgb(0, 0, 0);")
-			#msg.setStyleSheet("text-color: rgb(255, 255, 255);")
-			msg.setText("Are you sure to delete this report")
-			msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-			retval = msg.exec_()
-			#print("value of pressed message box button:", retval)
-			if retval == QMessageBox.Yes:
-				#print('Yes pressed')
-				leReport = self.report_list[self.ui.report_list.currentRow()]
-				r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
-				self.reload_app_list()
-			elif retval == QMessageBox.No:
-				#print('No pressed')
-				pass
-			#leReport = self.report_list[self.ui.report_list.currentRow()]
-			#r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
-
-		def delete_bug(self):
-			msg = QMessageBox()
-			msg.setIcon(QMessageBox.Information)
-			msg.setWindowTitle("Caution !")
-			msg.setWindowIcon(QtGui.QIcon('logo.png'))
-			#msg.setStyleSheet("background-color: rgb(0, 0, 0);")
-			#msg.setStyleSheet("text-color: rgb(255, 255, 255);")
-			msg.setText("Are you sure to delete this bug")
-			msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-			retval = msg.exec_()
-			#print("value of pressed message box button:", retval)
-			if retval == QMessageBox.Yes:
-				#print('Yes pressed')
-				leBug = self.bug_list[self.ui.bug_list.currentRow()]
-				r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Bug/Delete/'+str(leBug.id))
-				self.reload_app_list()
-			elif retval == QMessageBox.No:
-				#print('No pressed')
-				pass
-			#leReport = self.report_list[self.ui.report_list.currentRow()]
-			#r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
-
-
 		def show_app_page(self):
 			self.ui.pager.setCurrentIndex(0)
 
@@ -431,77 +362,46 @@ try:
 		def show_bug_page(self):
 			self.ui.pager.setCurrentIndex(2)
 
-		def show_update_bug_page(self):
-			self.ui.pager.setCurrentIndex(3)
-
-		def show_create_bug_page(self):
-			self.ui.pager.setCurrentIndex(4)
-
-		def load_bug_to_update(self):
-			self.show_update_bug_page()
-			leBug = self.bug_list[self.ui.bug_list.currentRow()]
-			self.ui.update_bug_title_box.setPlainText(leBug.title)
-			self.ui.update_bug_description_box.setPlainText(leBug.description)
-
-		def load_report_to_bug(self):
-			self.show_create_bug_page()
+		def load_report_info(self):
 			leReport = self.report_list[self.ui.report_list.currentRow()]
-			self.ui.create_bug_title_box.setPlainText(leReport.title)
-			self.ui.create_bug_description_box.setPlainText("""Date : \nTested by :\nCause by :\nDesc on report: """)
-			self.ui.create_bug_description_box.appendPlainText(leReport.description)	
-
-		def load_report_info(self,inString):
-			self.show_report_page()
-			if inString == 'new':
-				leReport = self.report_list[self.ui.report_list.currentRow()]
-				self.ui.create_bug_button.show()
-				self.ui.delete_report_button.show()
-			elif inString == 'old':
-				leReport = self.old_report_list[self.ui.old_report_list.currentRow()]
-				self.ui.delete_report_button.hide()
-				self.ui.create_bug_button.hide()
-
 			self.ui.report_title_box.setPlainText(leReport.title)
-			self.ui.report_description_box.setPlainText(leReport.description)	
+			self.ui.report_description_box.setPlainText(leReport.description)
+
 		def load_bug_info(self):
-			self.show_bug_page()
 			leBug = self.bug_list[self.ui.bug_list.currentRow()]
 			self.ui.bug_title_box.setPlainText(leBug.title)
 			self.ui.bug_description_box.setPlainText(leBug.description)
 			self.ui.bug_status_box.setPlainText(leBug.status_list[leBug.status])
 			self.ui.bug_serverity_box.setPlainText(leBug.serverities_list[leBug.serverity])
-			#there is a color function needed to be done
+			startStylesheet = """QPlainTextEdit {
+							border:3px solid rgb(17, 60, 71);
+							border-radius:20px;
+							font: 500 italic 20pt "Ubuntu";
+							color: """
 
+			endStylesheet = """;
+							;}"""
+			if leBug.status == 0:
+				#print("Debug here")
+				#self.ui.bug_status_box.setStyleSheet()
+				pass
 		def load_report_bug(self):
 			self.app_id = self.app_list[self.ui.app_list.currentRow()].id
 			print(self.app_id)
 			self.ui.side_box.setCurrentIndex(1)
 			self.report_list = []
-			self.old_report_list = []
-			self.ui.old_report_list.clear()
 			self.ui.report_list.clear()
 
 			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Report/GetByAppId/'+str(self.app_id))
 			for i in r.json():
-				leReport = Report(i)
-				rr = requests.get('https://bugtracker-api.azurewebsites.net/api/Bug/GetByReportId/'+str(leReport.id))
-				if rr.status_code == 200:
-					self.old_report_list.append(leReport)
-				elif rr.status_code == 204:
-					self.report_list.append(leReport)
-
-			#https://bugtracker-api.azurewebsites.net/api/Bug/GetByReportId/5
-
-			for n in self.report_list:
-				self.ui.report_list.addItem(n.title)
-
-			for o in self.old_report_list:
-				self.ui.old_report_list.addItem(o.title)
+				self.report_list.append(Report(i))
+			for a in self.report_list:
+				self.ui.report_list.addItem(a.title)
 
 			self.bug_list = []
 			self.ui.bug_list.clear()
 
-			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Bug/GetByAppId/'+str(self.app_id))
+			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Bug/GetByStaffId/'+user.id)
 			for i in r.json():
 				self.bug_list.append(Bug(i))
 			for a in self.bug_list:
@@ -529,7 +429,6 @@ try:
 		def clear_app_list(self):
 			self.app_list = []
 			self.ui.app_list.clear()
-
 		def clear_all_list(self):
 			self.app_list = []
 			self.ui.app_list.clear()
@@ -537,8 +436,6 @@ try:
 			self.ui.report_list.clear()
 			self.bug_list = []
 			self.ui.bug_list.clear()
-			self.old_report_list = []
-			self.ui.old_report_list.clear()
 		def search_for_app(self):
 			
 			keyword = self.ui.search_box.text()
@@ -578,6 +475,7 @@ try:
 			'''
 			#print(user.id)
 		def trigger_side_menu(self):
+			
 			if self.side_menu_state == False:
 				self.ui.slide_menu_container.setMaximumWidth(250)
 			else:
