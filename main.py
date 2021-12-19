@@ -61,7 +61,13 @@ try:
 			self.expiresIn = 0
 			self.accessToken = 0
 			self.roles = 0
-
+	class Staff():
+		def __init__(self,infolist):
+			self.userName = infolist['userName']
+			self.fullName = infolist['fullName']
+			self.companyId = infolist['companyId']
+			self.email = infolist['email']
+			self.id = infolist['id']
 	class App():
 		def __init__(self,infolist):
 			self.name = infolist['name']
@@ -147,7 +153,7 @@ try:
 					if "admin" in user.roles:
 						#print("ADMIN")
 						widget.setCurrentIndex(menu_admin_index)
-						mainmenuadminscreen.load_app_list()
+						mainmenuadminscreen.load_app_staff_list()
 					if "customer" in user.roles:
 						#print("Customer")
 						widget.setCurrentIndex(menu_customer_index)
@@ -249,11 +255,38 @@ try:
 			self.ui.setupUi(self)
 
 			self.ui.slide_menu_container.setMaximumWidth(0)
+
 			self.ui.exit_button.clicked.connect(sys.exit)
+
 			self.ui.menu_button.clicked.connect(self.trigger_side_menu)
+
 			self.ui.refresh_button.clicked.connect(self.reload_app_list)
 
 			self.ui.app_list.itemClicked.connect(self.clicked_on_app_list)
+
+			self.ui.staff_list.itemClicked.connect(self.clicked_on_staff_list)
+
+			self.ui.update_app_button.clicked.connect(self.show_update_app_page)
+
+			self.ui.back_to_info_app_page.clicked.connect(self.show_app_info_page)
+
+			self.ui.update_staff_button.clicked.connect(self.show_update_staff_page)
+
+			self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
+
+			self.ui.create_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
+
+			self.ui.cancel_create_staff_button.clicked.connect(self.show_)
+
+			self.ui.cancel_update_staff_button.clicked.connect(self.show_staff_info_page)
+
+			self.password_mode_update = True
+
+			self.password_mode_create = True
+
+			self.ui.update_staff_show_password_button.clicked.connect(self.trigger_password_mode_update)
+
+			self.ui.create_staff_show_password_button.clicked.connect(self.trigger_password_mode_create)
 			#self.ui.app_list.itemClicked.connect(self.show_app_page)
 			#self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
 
@@ -269,7 +302,21 @@ try:
 			self.staff_list = []
 			self.add_id = None
 			self.companyId = None
+		def trigger_password_mode_update(self):
+			if self.password_mode_update :
+				self.password_mode = False
+				self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Normal)
+			else:
+				self.password_mode_update = True
+				self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 
+		def trigger_password_mode_create(self):
+			if self.password_mode_create :
+				self.password_mode_create = False
+				self.ui.create_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Normal)
+			else:
+				self.password_mode_create = True
+				self.ui.create_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 		def signout(self):
 			user.signout()
 			self.clear_all_list()
@@ -277,17 +324,51 @@ try:
 
 		def clicked_on_app_list(self):
 			#print(self.ui.app_list.currentItem().text())
-			if self.ui.app_list.currentItem().text() == 'Create New...':
+			if self.ui.app_list.currentItem().text() == 'Create New App...':
 				self.show_create_app_page()
 			else:
 				self.load_app_info()
 
-		def show_create_app_page(self):
-			print("heheheh")
+		def clicked_on_staff_list(self):
+			#print(self.ui.app_list.currentItem().text())
+			if self.ui.staff_list.currentItem().text() == 'Create New Staff...':
+				self.show_create_staff_page()
+			else:
+				self.load_staff_info()
+		
+
+
+		def load_staff_info(self):
+			self.show_staff_info_page()	
+
 
 		def load_app_info(self):
-			app_id = self.app_list[self.ui.app_list.currentRow()].id
-			print(app_id)
+			self.show_app_info_page()
+
+
+		def show_welcome_page(self)
+			self.ui.pager.setCurrentIndex(0)
+		
+		def show_app_info_page(self):
+			self.ui.pager.setCurrentIndex(1)
+
+		def show_create_app_page(self):
+			self.ui.pager.setCurrentIndex(2)
+
+		def show_update_app_page(self):
+			self.ui.pager.setCurrentIndex(3)
+
+		def show_staff_info_page(self):
+			self.ui.pager.setCurrentIndex(4)
+
+		def show_update_staff_page(self):
+			self.ui.pager.setCurrentIndex(5)
+
+		def show_create_staff_page(self):
+			self.ui.pager.setCurrentIndex(6)
+
+		
+
 		def on_change_app(self):
 			#self.show_app_page(	)
 			self.itemSelectionDetected = True
@@ -310,15 +391,18 @@ try:
 		def clear_all_list(self):
 			self.app_list = []
 			self.ui.app_list.clear()
+			self.staff_list = []
+			self.ui.staff_list
 			self.companyId = None
 
 		def reload_app_list(self):
 			self.clear_app_list()
-			self.load_app_list()
+			self.load_app_staff_list()
 			self.itemSelectionDetected = False
 			
-		def load_app_list(self):
+		def load_app_staff_list(self):
 			self.app_list = []
+			self.staff_list = []
 			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Company/GetAll')
 			print(r.json())
 			for c in r.json():
@@ -330,15 +414,17 @@ try:
 						print(i)
 					for a in self.app_list:
 						self.ui.app_list.addItem(a.name)
-			self.ui.app_list.addItem("Create New...")
-			
-			'''
-			i = 0
-			while i < 100:
-				self.ui.app_list.addItem(str(i))
-				i = i + 1
-			'''
-			#print(user.id)
+
+					rr = requests.get('https://bugtracker-api.azurewebsites.net/api/Staff/GetByCompanyId/'+str(companyId))
+					for ii in rr.json():
+						self.staff_list.append(Staff(ii))
+						#print(i)
+					for s in self.staff_list:
+						self.ui.staff_list.addItem(s.userName)
+
+			self.ui.staff_list.addItem("Create New Staff...")
+			self.ui.app_list.addItem("Create New App...")
+
 		def trigger_side_menu(self):
 			if self.side_menu_state == False:
 				self.ui.slide_menu_container.setMaximumWidth(250)

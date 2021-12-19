@@ -259,31 +259,32 @@ class Ui_Dialog(object):
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.pager = QtWidgets.QStackedWidget(self.main_menu_content)
         self.pager.setObjectName("pager")
-        self.test_page_1 = QtWidgets.QWidget()
-        self.test_page_1.setObjectName("test_page_1")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.test_page_1)
+        self.welcome_page = QtWidgets.QWidget()
+        self.welcome_page.setObjectName("welcome_page")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.welcome_page)
+        self.plainTextEdit.setEnabled(False)
         self.plainTextEdit.setGeometry(QtCore.QRect(0, 0, 941, 721))
         self.plainTextEdit.setMinimumSize(QtCore.QSize(941, 0))
         self.plainTextEdit.setStyleSheet("\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.plainTextEdit.setObjectName("plainTextEdit")
-        self.pager.addWidget(self.test_page_1)
-        self.test_page_2 = QtWidgets.QWidget()
-        self.test_page_2.setObjectName("test_page_2")
-        self.label_5 = QtWidgets.QLabel(self.test_page_2)
-        self.label_5.setGeometry(QtCore.QRect(0, 10, 191, 41))
+        self.pager.addWidget(self.welcome_page)
+        self.app_info_page = QtWidgets.QWidget()
+        self.app_info_page.setObjectName("app_info_page")
+        self.label_5 = QtWidgets.QLabel(self.app_info_page)
+        self.label_5.setGeometry(QtCore.QRect(0, 0, 191, 41))
         self.label_5.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label_5.setObjectName("label_5")
-        self.create_bug_button = QtWidgets.QPushButton(self.test_page_2)
-        self.create_bug_button.setGeometry(QtCore.QRect(200, 670, 171, 51))
+        self.update_app_button = QtWidgets.QPushButton(self.app_info_page)
+        self.update_app_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.create_bug_button.sizePolicy().hasHeightForWidth())
-        self.create_bug_button.setSizePolicy(sizePolicy)
-        self.create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.update_app_button.sizePolicy().hasHeightForWidth())
+        self.update_app_button.setSizePolicy(sizePolicy)
+        self.update_app_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-radius: 20px;\n"
@@ -291,36 +292,98 @@ class Ui_Dialog(object):
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.create_bug_button.setObjectName("create_bug_button")
-        self.report_description_box = QtWidgets.QPlainTextEdit(self.test_page_2)
-        self.report_description_box.setEnabled(False)
-        self.report_description_box.setGeometry(QtCore.QRect(0, 170, 821, 451))
-        self.report_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:20px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.report_description_box.setObjectName("report_description_box")
-        self.label_6 = QtWidgets.QLabel(self.test_page_2)
+        self.update_app_button.setObjectName("update_app_button")
+        self.label_6 = QtWidgets.QLabel(self.app_info_page)
         self.label_6.setGeometry(QtCore.QRect(0, 110, 221, 51))
         self.label_6.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_6.setObjectName("label_6")
-        self.report_title_box = QtWidgets.QPlainTextEdit(self.test_page_2)
-        self.report_title_box.setEnabled(False)
-        self.report_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
-        self.report_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.info_app_staff_list = QtWidgets.QListWidget(self.app_info_page)
+        self.info_app_staff_list.setGeometry(QtCore.QRect(0, 160, 471, 501))
+        self.info_app_staff_list.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.report_title_box.setObjectName("report_title_box")
-        self.delete_report_button = QtWidgets.QPushButton(self.test_page_2)
-        self.delete_report_button.setGeometry(QtCore.QRect(0, 670, 191, 51))
+        self.info_app_staff_list.setObjectName("info_app_staff_list")
+        self.info_app_name_box = QtWidgets.QLineEdit(self.app_info_page)
+        self.info_app_name_box.setEnabled(False)
+        self.info_app_name_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.info_app_name_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.info_app_name_box.setClearButtonEnabled(False)
+        self.info_app_name_box.setObjectName("info_app_name_box")
+        self.pager.addWidget(self.app_info_page)
+        self.create_app_page = QtWidgets.QWidget()
+        self.create_app_page.setObjectName("create_app_page")
+        self.label_7 = QtWidgets.QLabel(self.create_app_page)
+        self.label_7.setGeometry(QtCore.QRect(0, 0, 201, 41))
+        self.label_7.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_7.setObjectName("label_7")
+        self.create_app_button = QtWidgets.QPushButton(self.create_app_page)
+        self.create_app_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.delete_report_button.sizePolicy().hasHeightForWidth())
-        self.delete_report_button.setSizePolicy(sizePolicy)
-        self.delete_report_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.create_app_button.sizePolicy().hasHeightForWidth())
+        self.create_app_button.setSizePolicy(sizePolicy)
+        self.create_app_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.create_app_button.setObjectName("create_app_button")
+        self.label_8 = QtWidgets.QLabel(self.create_app_page)
+        self.label_8.setGeometry(QtCore.QRect(0, 110, 201, 41))
+        self.label_8.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_8.setObjectName("label_8")
+        self.create_app_name_box = QtWidgets.QLineEdit(self.create_app_page)
+        self.create_app_name_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.create_app_name_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_app_name_box.setObjectName("create_app_name_box")
+        self.create_app_logoUrl_box = QtWidgets.QLineEdit(self.create_app_page)
+        self.create_app_logoUrl_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.create_app_logoUrl_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_app_logoUrl_box.setObjectName("create_app_logoUrl_box")
+        self.pager.addWidget(self.create_app_page)
+        self.update_app_page = QtWidgets.QWidget()
+        self.update_app_page.setObjectName("update_app_page")
+        self.add_staff_to_app_button = QtWidgets.QPushButton(self.update_app_page)
+        self.add_staff_to_app_button.setGeometry(QtCore.QRect(770, 670, 171, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.add_staff_to_app_button.sizePolicy().hasHeightForWidth())
+        self.add_staff_to_app_button.setSizePolicy(sizePolicy)
+        self.add_staff_to_app_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.add_staff_to_app_button.setObjectName("add_staff_to_app_button")
+        self.remove_staff_from_app_button = QtWidgets.QPushButton(self.update_app_page)
+        self.remove_staff_from_app_button.setGeometry(QtCore.QRect(0, 670, 191, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.remove_staff_from_app_button.sizePolicy().hasHeightForWidth())
+        self.remove_staff_from_app_button.setSizePolicy(sizePolicy)
+        self.remove_staff_from_app_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-radius: 18px;\n"
@@ -328,97 +391,91 @@ class Ui_Dialog(object):
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.delete_report_button.setObjectName("delete_report_button")
-        self.pager.addWidget(self.test_page_2)
-        self.test_page_3 = QtWidgets.QWidget()
-        self.test_page_3.setObjectName("test_page_3")
-        self.label_7 = QtWidgets.QLabel(self.test_page_3)
-        self.label_7.setGeometry(QtCore.QRect(0, 10, 91, 41))
-        self.label_7.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
-        self.label_7.setObjectName("label_7")
-        self.label_10 = QtWidgets.QLabel(self.test_page_3)
+        self.remove_staff_from_app_button.setObjectName("remove_staff_from_app_button")
+        self.label_10 = QtWidgets.QLabel(self.update_app_page)
         self.label_10.setGeometry(QtCore.QRect(0, 110, 221, 51))
         self.label_10.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_10.setObjectName("label_10")
-        self.bug_title_box = QtWidgets.QPlainTextEdit(self.test_page_3)
-        self.bug_title_box.setEnabled(False)
-        self.bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
-        self.bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.app_staff_list = QtWidgets.QListWidget(self.update_app_page)
+        self.app_staff_list.setGeometry(QtCore.QRect(0, 160, 471, 501))
+        self.app_staff_list.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.bug_title_box.setObjectName("bug_title_box")
-        self.bug_description_box = QtWidgets.QPlainTextEdit(self.test_page_3)
-        self.bug_description_box.setEnabled(False)
-        self.bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
-        self.bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:20px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.bug_description_box.setObjectName("bug_description_box")
-        self.bug_serverity_box = QtWidgets.QPlainTextEdit(self.test_page_3)
-        self.bug_serverity_box.setEnabled(False)
-        self.bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 221, 51))
-        self.bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:20px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.bug_serverity_box.setPlainText("")
-        self.bug_serverity_box.setPlaceholderText("")
-        self.bug_serverity_box.setObjectName("bug_serverity_box")
-        self.label_11 = QtWidgets.QLabel(self.test_page_3)
-        self.label_11.setGeometry(QtCore.QRect(0, 440, 181, 41))
+        self.app_staff_list.setObjectName("app_staff_list")
+        self.label_11 = QtWidgets.QLabel(self.update_app_page)
+        self.label_11.setGeometry(QtCore.QRect(0, 0, 191, 41))
         self.label_11.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label_11.setObjectName("label_11")
-        self.bug_status_box = QtWidgets.QPlainTextEdit(self.test_page_3)
-        self.bug_status_box.setEnabled(False)
-        self.bug_status_box.setGeometry(QtCore.QRect(0, 600, 221, 51))
-        self.bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.remain_staff_list = QtWidgets.QListWidget(self.update_app_page)
+        self.remain_staff_list.setGeometry(QtCore.QRect(480, 160, 461, 501))
+        self.remain_staff_list.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.bug_status_box.setPlaceholderText("")
-        self.bug_status_box.setObjectName("bug_status_box")
-        self.label_12 = QtWidgets.QLabel(self.test_page_3)
-        self.label_12.setGeometry(QtCore.QRect(0, 550, 131, 41))
+        self.remain_staff_list.setObjectName("remain_staff_list")
+        self.label_12 = QtWidgets.QLabel(self.update_app_page)
+        self.label_12.setGeometry(QtCore.QRect(690, 100, 251, 51))
         self.label_12.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
+"color:rgb(17, 60, 74);")
         self.label_12.setObjectName("label_12")
-        self.update_bug_button = QtWidgets.QPushButton(self.test_page_3)
-        self.update_bug_button.setGeometry(QtCore.QRect(0, 670, 171, 51))
+        self.back_to_info_app_page = QtWidgets.QPushButton(self.update_app_page)
+        self.back_to_info_app_page.setGeometry(QtCore.QRect(280, 670, 191, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.update_bug_button.sizePolicy().hasHeightForWidth())
-        self.update_bug_button.setSizePolicy(sizePolicy)
-        self.update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.back_to_info_app_page.sizePolicy().hasHeightForWidth())
+        self.back_to_info_app_page.setSizePolicy(sizePolicy)
+        self.back_to_info_app_page.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
-"border-radius: 20px;\n"
+"border-radius: 18px;\n"
 "border-color: white;\n"
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.update_bug_button.setObjectName("update_bug_button")
-        self.pager.addWidget(self.test_page_3)
-        self.change_bug_page = QtWidgets.QWidget()
-        self.change_bug_page.setObjectName("change_bug_page")
-        self.label_9 = QtWidgets.QLabel(self.change_bug_page)
-        self.label_9.setGeometry(QtCore.QRect(0, 10, 91, 41))
+        self.back_to_info_app_page.setObjectName("back_to_info_app_page")
+        self.update_app_name_box = QtWidgets.QLineEdit(self.update_app_page)
+        self.update_app_name_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.update_app_name_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_app_name_box.setObjectName("update_app_name_box")
+        self.update_app_name_button = QtWidgets.QPushButton(self.update_app_page)
+        self.update_app_name_button.setGeometry(QtCore.QRect(480, 670, 191, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.update_app_name_button.sizePolicy().hasHeightForWidth())
+        self.update_app_name_button.setSizePolicy(sizePolicy)
+        self.update_app_name_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 18px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.update_app_name_button.setObjectName("update_app_name_button")
+        self.pager.addWidget(self.update_app_page)
+        self.staff_info_page = QtWidgets.QWidget()
+        self.staff_info_page.setObjectName("staff_info_page")
+        self.label_9 = QtWidgets.QLabel(self.staff_info_page)
+        self.label_9.setGeometry(QtCore.QRect(0, 0, 211, 41))
         self.label_9.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label_9.setObjectName("label_9")
-        self.confirm_update_bug_button = QtWidgets.QPushButton(self.change_bug_page)
-        self.confirm_update_bug_button.setGeometry(QtCore.QRect(140, 670, 131, 51))
+        self.update_staff_button = QtWidgets.QPushButton(self.staff_info_page)
+        self.update_staff_button.setGeometry(QtCore.QRect(10, 670, 131, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.confirm_update_bug_button.sizePolicy().hasHeightForWidth())
-        self.confirm_update_bug_button.setSizePolicy(sizePolicy)
-        self.confirm_update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.update_staff_button.sizePolicy().hasHeightForWidth())
+        self.update_staff_button.setSizePolicy(sizePolicy)
+        self.update_staff_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-radius: 20px;\n"
@@ -426,137 +483,150 @@ class Ui_Dialog(object):
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.confirm_update_bug_button.setObjectName("confirm_update_bug_button")
-        self.update_bug_description_box = QtWidgets.QPlainTextEdit(self.change_bug_page)
-        self.update_bug_description_box.setEnabled(True)
-        self.update_bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
-        self.update_bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:20px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.update_bug_description_box.setObjectName("update_bug_description_box")
-        self.label_13 = QtWidgets.QLabel(self.change_bug_page)
-        self.label_13.setGeometry(QtCore.QRect(0, 550, 131, 41))
-        self.label_13.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
-        self.label_13.setObjectName("label_13")
-        self.label_14 = QtWidgets.QLabel(self.change_bug_page)
-        self.label_14.setGeometry(QtCore.QRect(0, 440, 181, 41))
-        self.label_14.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
-        self.label_14.setObjectName("label_14")
-        self.update_bug_title_box = QtWidgets.QPlainTextEdit(self.change_bug_page)
-        self.update_bug_title_box.setEnabled(True)
-        self.update_bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
-        self.update_bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:20px;\n"
-"font: 500 italic 20pt \"Ubuntu\";\n"
-"color: rgb(221, 221, 221);")
-        self.update_bug_title_box.setObjectName("update_bug_title_box")
-        self.label_15 = QtWidgets.QLabel(self.change_bug_page)
-        self.label_15.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.update_staff_button.setObjectName("update_staff_button")
+        self.label_15 = QtWidgets.QLabel(self.staff_info_page)
+        self.label_15.setGeometry(QtCore.QRect(0, 110, 221, 41))
         self.label_15.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_15.setObjectName("label_15")
-        self.delete_bug_button = QtWidgets.QPushButton(self.change_bug_page)
-        self.delete_bug_button.setGeometry(QtCore.QRect(0, 670, 131, 51))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.delete_bug_button.sizePolicy().hasHeightForWidth())
-        self.delete_bug_button.setSizePolicy(sizePolicy)
-        self.delete_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
-"border-style: outset;\n"
-"border-width: 1px;\n"
-"border-radius: 20px;\n"
-"border-color: white;\n"
-"padding: 2px;\n"
-"font: 700 20pt \"Ubuntu\";\n"
-"color : white;")
-        self.delete_bug_button.setObjectName("delete_bug_button")
-        self.update_bug_serverity_box = QtWidgets.QComboBox(self.change_bug_page)
-        self.update_bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 171, 51))
-        self.update_bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:10px;\n"
+        self.label_20 = QtWidgets.QLabel(self.staff_info_page)
+        self.label_20.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_20.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_20.setObjectName("label_20")
+        self.info_staff_email_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.info_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.update_bug_serverity_box.setObjectName("update_bug_serverity_box")
-        self.update_bug_serverity_box.addItem("")
-        self.update_bug_serverity_box.addItem("")
-        self.update_bug_serverity_box.addItem("")
-        self.update_bug_serverity_box.addItem("")
-        self.update_bug_serverity_box.addItem("")
-        self.update_bug_status_box = QtWidgets.QComboBox(self.change_bug_page)
-        self.update_bug_status_box.setGeometry(QtCore.QRect(0, 600, 171, 51))
-        self.update_bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:10px;\n"
+        self.info_staff_email_box.setObjectName("info_staff_email_box")
+        self.info_staff_fullname_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.info_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.update_bug_status_box.setObjectName("update_bug_status_box")
-        self.update_bug_status_box.addItem("")
-        self.update_bug_status_box.addItem("")
-        self.update_bug_status_box.addItem("")
-        self.update_bug_status_box.addItem("")
-        self.cancel_update_bug_button = QtWidgets.QPushButton(self.change_bug_page)
-        self.cancel_update_bug_button.setGeometry(QtCore.QRect(280, 670, 131, 51))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.cancel_update_bug_button.sizePolicy().hasHeightForWidth())
-        self.cancel_update_bug_button.setSizePolicy(sizePolicy)
-        self.cancel_update_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
-"border-style: outset;\n"
-"border-width: 1px;\n"
-"border-radius: 20px;\n"
-"border-color: white;\n"
-"padding: 2px;\n"
-"font: 700 20pt \"Ubuntu\";\n"
-"color : white;")
-        self.cancel_update_bug_button.setObjectName("cancel_update_bug_button")
-        self.pager.addWidget(self.change_bug_page)
-        self.create_bug_page = QtWidgets.QWidget()
-        self.create_bug_page.setObjectName("create_bug_page")
-        self.create_bug_serverity_box = QtWidgets.QComboBox(self.create_bug_page)
-        self.create_bug_serverity_box.setGeometry(QtCore.QRect(0, 490, 171, 51))
-        self.create_bug_serverity_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
-"border-radius:10px;\n"
+        self.info_staff_fullname_box.setObjectName("info_staff_fullname_box")
+        self.info_staff_username_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.info_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.create_bug_serverity_box.setObjectName("create_bug_serverity_box")
-        self.create_bug_serverity_box.addItem("")
-        self.create_bug_serverity_box.addItem("")
-        self.create_bug_serverity_box.addItem("")
-        self.create_bug_serverity_box.addItem("")
-        self.create_bug_serverity_box.addItem("")
-        self.label_16 = QtWidgets.QLabel(self.create_bug_page)
-        self.label_16.setGeometry(QtCore.QRect(0, 110, 221, 51))
+        self.info_staff_username_box.setObjectName("info_staff_username_box")
+        self.pager.addWidget(self.staff_info_page)
+        self.update_staff_page = QtWidgets.QWidget()
+        self.update_staff_page.setObjectName("update_staff_page")
+        self.label_16 = QtWidgets.QLabel(self.update_staff_page)
+        self.label_16.setGeometry(QtCore.QRect(0, 110, 221, 41))
         self.label_16.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_16.setObjectName("label_16")
-        self.label_17 = QtWidgets.QLabel(self.create_bug_page)
-        self.label_17.setGeometry(QtCore.QRect(0, 10, 91, 41))
-        self.label_17.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+        self.label_21 = QtWidgets.QLabel(self.update_staff_page)
+        self.label_21.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_21.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_21.setObjectName("label_21")
+        self.label_13 = QtWidgets.QLabel(self.update_staff_page)
+        self.label_13.setGeometry(QtCore.QRect(0, 0, 211, 41))
+        self.label_13.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
-        self.label_17.setObjectName("label_17")
-        self.create_bug_status_box = QtWidgets.QComboBox(self.create_bug_page)
-        self.create_bug_status_box.setGeometry(QtCore.QRect(0, 600, 171, 51))
-        self.create_bug_status_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.label_13.setObjectName("label_13")
+        self.confirm_update_staff_button = QtWidgets.QPushButton(self.update_staff_page)
+        self.confirm_update_staff_button.setGeometry(QtCore.QRect(10, 670, 131, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.confirm_update_staff_button.sizePolicy().hasHeightForWidth())
+        self.confirm_update_staff_button.setSizePolicy(sizePolicy)
+        self.confirm_update_staff_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.confirm_update_staff_button.setObjectName("confirm_update_staff_button")
+        self.cancel_update_staff_button = QtWidgets.QPushButton(self.update_staff_page)
+        self.cancel_update_staff_button.setGeometry(QtCore.QRect(150, 670, 131, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cancel_update_staff_button.sizePolicy().hasHeightForWidth())
+        self.cancel_update_staff_button.setSizePolicy(sizePolicy)
+        self.cancel_update_staff_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+"border-style: outset;\n"
+"border-width: 1px;\n"
+"border-radius: 20px;\n"
+"border-color: white;\n"
+"padding: 2px;\n"
+"font: 700 20pt \"Ubuntu\";\n"
+"color : white;")
+        self.cancel_update_staff_button.setObjectName("cancel_update_staff_button")
+        self.label_24 = QtWidgets.QLabel(self.update_staff_page)
+        self.label_24.setGeometry(QtCore.QRect(0, 330, 191, 41))
+        self.label_24.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_24.setObjectName("label_24")
+        self.update_staff_show_password_button = QtWidgets.QPushButton(self.update_staff_page)
+        self.update_staff_show_password_button.setGeometry(QtCore.QRect(480, 400, 131, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.update_staff_show_password_button.sizePolicy().hasHeightForWidth())
+        self.update_staff_show_password_button.setSizePolicy(sizePolicy)
+        self.update_staff_show_password_button.setStyleSheet("border:2 px solid rgb(17, 60, 74);\n"
 "border-radius:10px;\n"
+"font: 500 italic 10pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);\n"
+"background-color: rgb(85, 170, 255);")
+        self.update_staff_show_password_button.setObjectName("update_staff_show_password_button")
+        self.update_staff_username_box = QtWidgets.QLineEdit(self.update_staff_page)
+        self.update_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.update_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.create_bug_status_box.setObjectName("create_bug_status_box")
-        self.create_bug_status_box.addItem("")
-        self.create_bug_status_box.addItem("")
-        self.create_bug_status_box.addItem("")
-        self.create_bug_status_box.addItem("")
-        self.cancel_create_bug_button = QtWidgets.QPushButton(self.create_bug_page)
-        self.cancel_create_bug_button.setGeometry(QtCore.QRect(170, 670, 171, 51))
+        self.update_staff_username_box.setObjectName("update_staff_username_box")
+        self.update_staff_fullname_box = QtWidgets.QLineEdit(self.update_staff_page)
+        self.update_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.update_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_staff_fullname_box.setObjectName("update_staff_fullname_box")
+        self.update_staff_password_box = QtWidgets.QLineEdit(self.update_staff_page)
+        self.update_staff_password_box.setGeometry(QtCore.QRect(0, 380, 471, 51))
+        self.update_staff_password_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_staff_password_box.setObjectName("update_staff_password_box")
+        self.update_staff_email_box = QtWidgets.QLineEdit(self.update_staff_page)
+        self.update_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.update_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.update_staff_email_box.setObjectName("update_staff_email_box")
+        self.pager.addWidget(self.update_staff_page)
+        self.create_staff_page = QtWidgets.QWidget()
+        self.create_staff_page.setObjectName("create_staff_page")
+        self.label_22 = QtWidgets.QLabel(self.create_staff_page)
+        self.label_22.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_22.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_22.setObjectName("label_22")
+        self.confirm_create_staff_button = QtWidgets.QPushButton(self.create_staff_page)
+        self.confirm_create_staff_button.setGeometry(QtCore.QRect(10, 670, 131, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.cancel_create_bug_button.sizePolicy().hasHeightForWidth())
-        self.cancel_create_bug_button.setSizePolicy(sizePolicy)
-        self.cancel_create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.confirm_create_staff_button.sizePolicy().hasHeightForWidth())
+        self.confirm_create_staff_button.setSizePolicy(sizePolicy)
+        self.confirm_create_staff_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-radius: 20px;\n"
@@ -564,15 +634,25 @@ class Ui_Dialog(object):
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.cancel_create_bug_button.setObjectName("cancel_create_bug_button")
-        self.confirm_create_bug_button = QtWidgets.QPushButton(self.create_bug_page)
-        self.confirm_create_bug_button.setGeometry(QtCore.QRect(0, 670, 161, 51))
+        self.confirm_create_staff_button.setObjectName("confirm_create_staff_button")
+        self.label_17 = QtWidgets.QLabel(self.create_staff_page)
+        self.label_17.setGeometry(QtCore.QRect(0, 110, 221, 41))
+        self.label_17.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_17.setObjectName("label_17")
+        self.label_14 = QtWidgets.QLabel(self.create_staff_page)
+        self.label_14.setGeometry(QtCore.QRect(0, 0, 211, 41))
+        self.label_14.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color: rgb(17, 60, 74);")
+        self.label_14.setObjectName("label_14")
+        self.cancel_create_staff_button = QtWidgets.QPushButton(self.create_staff_page)
+        self.cancel_create_staff_button.setGeometry(QtCore.QRect(150, 670, 131, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.confirm_create_bug_button.sizePolicy().hasHeightForWidth())
-        self.confirm_create_bug_button.setSizePolicy(sizePolicy)
-        self.confirm_create_bug_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
+        sizePolicy.setHeightForWidth(self.cancel_create_staff_button.sizePolicy().hasHeightForWidth())
+        self.cancel_create_staff_button.setSizePolicy(sizePolicy)
+        self.cancel_create_staff_button.setStyleSheet("background-color: rgb(246, 114, 128);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-radius: 20px;\n"
@@ -580,34 +660,54 @@ class Ui_Dialog(object):
 "padding: 2px;\n"
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
-        self.confirm_create_bug_button.setObjectName("confirm_create_bug_button")
-        self.label_18 = QtWidgets.QLabel(self.create_bug_page)
-        self.label_18.setGeometry(QtCore.QRect(0, 550, 131, 41))
-        self.label_18.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
-        self.label_18.setObjectName("label_18")
-        self.label_19 = QtWidgets.QLabel(self.create_bug_page)
-        self.label_19.setGeometry(QtCore.QRect(0, 440, 181, 41))
-        self.label_19.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
-"color: rgb(17, 60, 74);")
-        self.label_19.setObjectName("label_19")
-        self.create_bug_description_box = QtWidgets.QPlainTextEdit(self.create_bug_page)
-        self.create_bug_description_box.setEnabled(True)
-        self.create_bug_description_box.setGeometry(QtCore.QRect(0, 170, 861, 261))
-        self.create_bug_description_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.cancel_create_staff_button.setObjectName("cancel_create_staff_button")
+        self.label_23 = QtWidgets.QLabel(self.create_staff_page)
+        self.label_23.setGeometry(QtCore.QRect(0, 330, 191, 41))
+        self.label_23.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+"color:rgb(17, 60, 74);")
+        self.label_23.setObjectName("label_23")
+        self.create_staff_show_password_button = QtWidgets.QPushButton(self.create_staff_page)
+        self.create_staff_show_password_button.setGeometry(QtCore.QRect(480, 400, 131, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.create_staff_show_password_button.sizePolicy().hasHeightForWidth())
+        self.create_staff_show_password_button.setSizePolicy(sizePolicy)
+        self.create_staff_show_password_button.setStyleSheet("border:2 px solid rgb(17, 60, 74);\n"
+"border-radius:10px;\n"
+"font: 500 italic 10pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);\n"
+"background-color: rgb(85, 170, 255);")
+        self.create_staff_show_password_button.setObjectName("create_staff_show_password_button")
+        self.create_staff_username_box = QtWidgets.QLineEdit(self.create_staff_page)
+        self.create_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.create_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.create_bug_description_box.setObjectName("create_bug_description_box")
-        self.create_bug_title_box = QtWidgets.QPlainTextEdit(self.create_bug_page)
-        self.create_bug_title_box.setEnabled(True)
-        self.create_bug_title_box.setGeometry(QtCore.QRect(0, 50, 431, 51))
-        self.create_bug_title_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+        self.create_staff_username_box.setObjectName("create_staff_username_box")
+        self.create_staff_fullname_box = QtWidgets.QLineEdit(self.create_staff_page)
+        self.create_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.create_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
-        self.create_bug_title_box.setObjectName("create_bug_title_box")
-        self.pager.addWidget(self.create_bug_page)
+        self.create_staff_fullname_box.setObjectName("create_staff_fullname_box")
+        self.create_staff_email_box = QtWidgets.QLineEdit(self.create_staff_page)
+        self.create_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.create_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_staff_email_box.setObjectName("create_staff_email_box")
+        self.create_staff_password_box = QtWidgets.QLineEdit(self.create_staff_page)
+        self.create_staff_password_box.setGeometry(QtCore.QRect(0, 380, 471, 51))
+        self.create_staff_password_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
+"border-radius:20px;\n"
+"font: 500 italic 20pt \"Ubuntu\";\n"
+"color: rgb(221, 221, 221);")
+        self.create_staff_password_box.setObjectName("create_staff_password_box")
+        self.pager.addWidget(self.create_staff_page)
         self.horizontalLayout_10.addWidget(self.pager)
         self.verticalLayout.addWidget(self.main_menu_content)
         self.footer_frame = QtWidgets.QFrame(self.main_menu_container)
@@ -675,73 +775,56 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_4.setText(_translate("Dialog", "Bug Tracker"))
         self.side_box.setItemText(self.side_box.indexOf(self.app_page), _translate("Dialog", "➤ App"))
-        self.side_box.setItemText(self.side_box.indexOf(self.report_page), _translate("Dialog", "    ➤ Staff"))
+        self.side_box.setItemText(self.side_box.indexOf(self.report_page), _translate("Dialog", "➤ Staff"))
         self.signout_button.setText(_translate("Dialog", "Sign Out"))
         self.exit_button.setText(_translate("Dialog", "Exit "))
-        self.plainTextEdit.setPlainText(_translate("Dialog", "For starter :\n"
-"    Step 1: Open the side menu\n"
-"    Step 2: Select an App\n"
-"        Step 2.1: Select a Report\n"
-"            Step 2.1.1: Read Report/Create Bug/Delete Report\n"
-"        Step 2.2: Select a Bug\n"
-"            Step 2.2.2: Read Bug/Update Bug/Delete Bug\n"
-"\n"
-""))
-        self.label_5.setText(_translate("Dialog", "Problem"))
-        self.create_bug_button.setText(_translate("Dialog", "Create Bug"))
-        self.report_description_box.setPlaceholderText(_translate("Dialog", "\"None\""))
-        self.label_6.setText(_translate("Dialog", "Description"))
-        self.report_title_box.setPlaceholderText(_translate("Dialog", "Select a report first"))
-        self.delete_report_button.setText(_translate("Dialog", "Delete Report"))
-        self.label_7.setText(_translate("Dialog", "Title"))
-        self.label_10.setText(_translate("Dialog", "Description"))
-        self.bug_title_box.setPlaceholderText(_translate("Dialog", "Select a bug first"))
-        self.bug_description_box.setPlaceholderText(_translate("Dialog", "\"None\""))
-        self.label_11.setText(_translate("Dialog", "Serverity"))
-        self.label_12.setText(_translate("Dialog", "Status"))
-        self.update_bug_button.setText(_translate("Dialog", "Update Bug"))
-        self.label_9.setText(_translate("Dialog", "Title"))
-        self.confirm_update_bug_button.setText(_translate("Dialog", "Update"))
-        self.update_bug_description_box.setPlainText(_translate("Dialog", "Date : \n"
-"Tested by :\n"
-"Cause by :"))
-        self.update_bug_description_box.setPlaceholderText(_translate("Dialog", "Enter the description here please"))
-        self.label_13.setText(_translate("Dialog", "Status"))
-        self.label_14.setText(_translate("Dialog", "Serverity"))
-        self.update_bug_title_box.setPlaceholderText(_translate("Dialog", "Please do not leave blank"))
-        self.label_15.setText(_translate("Dialog", "Description"))
-        self.delete_bug_button.setText(_translate("Dialog", "Delete"))
-        self.update_bug_serverity_box.setItemText(0, _translate("Dialog", "Small"))
-        self.update_bug_serverity_box.setItemText(1, _translate("Dialog", "Normal"))
-        self.update_bug_serverity_box.setItemText(2, _translate("Dialog", "Bad"))
-        self.update_bug_serverity_box.setItemText(3, _translate("Dialog", "Extreme"))
-        self.update_bug_serverity_box.setItemText(4, _translate("Dialog", "EMEGENCY"))
-        self.update_bug_status_box.setItemText(0, _translate("Dialog", "Working"))
-        self.update_bug_status_box.setItemText(1, _translate("Dialog", "Fixed"))
-        self.update_bug_status_box.setItemText(2, _translate("Dialog", "Revised"))
-        self.update_bug_status_box.setItemText(3, _translate("Dialog", "Approved"))
-        self.cancel_update_bug_button.setText(_translate("Dialog", "Cancel"))
-        self.create_bug_serverity_box.setItemText(0, _translate("Dialog", "Small"))
-        self.create_bug_serverity_box.setItemText(1, _translate("Dialog", "Normal"))
-        self.create_bug_serverity_box.setItemText(2, _translate("Dialog", "Bad"))
-        self.create_bug_serverity_box.setItemText(3, _translate("Dialog", "Extreme"))
-        self.create_bug_serverity_box.setItemText(4, _translate("Dialog", "EMEGENCY"))
-        self.label_16.setText(_translate("Dialog", "Description"))
-        self.label_17.setText(_translate("Dialog", "Title"))
-        self.create_bug_status_box.setItemText(0, _translate("Dialog", "Working"))
-        self.create_bug_status_box.setItemText(1, _translate("Dialog", "Fixed"))
-        self.create_bug_status_box.setItemText(2, _translate("Dialog", "Revised"))
-        self.create_bug_status_box.setItemText(3, _translate("Dialog", "Approved"))
-        self.cancel_create_bug_button.setText(_translate("Dialog", "Cancel"))
-        self.confirm_create_bug_button.setText(_translate("Dialog", "Create"))
-        self.label_18.setText(_translate("Dialog", "Status"))
-        self.label_19.setText(_translate("Dialog", "Serverity"))
-        self.create_bug_description_box.setPlainText(_translate("Dialog", "Date : \n"
-"Tested by :\n"
-"Cause by :\n"
-"Desc on report: "))
-        self.create_bug_description_box.setPlaceholderText(_translate("Dialog", "Enter the description here please"))
-        self.create_bug_title_box.setPlaceholderText(_translate("Dialog", "Please do not leave blank"))
+        self.plainTextEdit.setPlainText(_translate("Dialog", "Welcome Admin"))
+        self.label_5.setText(_translate("Dialog", "Name"))
+        self.update_app_button.setText(_translate("Dialog", "Update App"))
+        self.label_6.setText(_translate("Dialog", "Staff List"))
+        self.info_app_name_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.label_7.setText(_translate("Dialog", "Name"))
+        self.create_app_button.setText(_translate("Dialog", "Create App"))
+        self.label_8.setText(_translate("Dialog", "Logo Url"))
+        self.create_app_name_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.create_app_logoUrl_box.setPlaceholderText(_translate("Dialog", "Optional"))
+        self.add_staff_to_app_button.setText(_translate("Dialog", "Add Staff"))
+        self.remove_staff_from_app_button.setText(_translate("Dialog", "Remove Staff"))
+        self.label_10.setText(_translate("Dialog", "Staff List"))
+        self.label_11.setText(_translate("Dialog", "Name"))
+        self.label_12.setText(_translate("Dialog", "Remain Staff"))
+        self.back_to_info_app_page.setText(_translate("Dialog", "Back"))
+        self.update_app_name_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.update_app_name_button.setText(_translate("Dialog", "Update Name"))
+        self.label_9.setText(_translate("Dialog", "User Name"))
+        self.update_staff_button.setText(_translate("Dialog", "Update"))
+        self.label_15.setText(_translate("Dialog", "Full name"))
+        self.label_20.setText(_translate("Dialog", "Email"))
+        self.info_staff_email_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.info_staff_fullname_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.info_staff_username_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.label_16.setText(_translate("Dialog", "Full name"))
+        self.label_21.setText(_translate("Dialog", "Email"))
+        self.label_13.setText(_translate("Dialog", "User Name"))
+        self.confirm_update_staff_button.setText(_translate("Dialog", "Update"))
+        self.cancel_update_staff_button.setText(_translate("Dialog", "Cancel"))
+        self.label_24.setText(_translate("Dialog", "Password"))
+        self.update_staff_show_password_button.setText(_translate("Dialog", "Show Password"))
+        self.update_staff_username_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.update_staff_fullname_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.update_staff_password_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.update_staff_email_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.label_22.setText(_translate("Dialog", "Email"))
+        self.confirm_create_staff_button.setText(_translate("Dialog", "Create"))
+        self.label_17.setText(_translate("Dialog", "Full name"))
+        self.label_14.setText(_translate("Dialog", "User Name"))
+        self.cancel_create_staff_button.setText(_translate("Dialog", "Cancel"))
+        self.label_23.setText(_translate("Dialog", "Password"))
+        self.create_staff_show_password_button.setText(_translate("Dialog", "Show Password"))
+        self.create_staff_username_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.create_staff_fullname_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.create_staff_email_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.create_staff_password_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
         self.label.setText(_translate("Dialog", "Bug Tracker v1"))
         self.label_2.setText(_translate("Dialog", "Our website:  "))
         self.website_button.setText(_translate("Dialog", "clickme.com"))
