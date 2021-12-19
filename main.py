@@ -260,7 +260,7 @@ try:
 
 			self.ui.menu_button.clicked.connect(self.trigger_side_menu)
 
-			self.ui.refresh_button.clicked.connect(self.reload_app_list)
+			self.ui.refresh_button.clicked.connect(self.reload_list)
 
 			self.ui.app_list.itemClicked.connect(self.clicked_on_app_list)
 
@@ -270,13 +270,13 @@ try:
 
 			self.ui.back_to_info_app_page.clicked.connect(self.show_app_info_page)
 
-			self.ui.update_staff_button.clicked.connect(self.show_update_staff_page)
+			self.ui.update_staff_button.clicked.connect(self.load_staff_info_to_update)
 
 			self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 
 			self.ui.create_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
 
-			self.ui.cancel_create_staff_button.clicked.connect(self.show_)
+			self.ui.cancel_create_staff_button.clicked.connect(self.show_welcome_page)
 
 			self.ui.cancel_update_staff_button.clicked.connect(self.show_staff_info_page)
 
@@ -287,6 +287,8 @@ try:
 			self.ui.update_staff_show_password_button.clicked.connect(self.trigger_password_mode_update)
 
 			self.ui.create_staff_show_password_button.clicked.connect(self.trigger_password_mode_create)
+
+			self.ui.confirm_update_staff_button.clicked.connect(self.update_staff)
 			#self.ui.app_list.itemClicked.connect(self.show_app_page)
 			#self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
 
@@ -298,20 +300,23 @@ try:
 
 			self.ui.signout_button.clicked.connect(self.signout)
 
+			self.ui.update_staff_show_password_button.hide()
+
 			self.app_list = []
 			self.staff_list = []
 			self.add_id = None
 			self.companyId = None
+			self.info_app_staff_list = []
 		def trigger_password_mode_update(self):
 			if self.password_mode_update :
-				self.password_mode = False
-				self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Normal)
+				self.password_mode_update = False
+				self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Normal)	
 			else:
 				self.password_mode_update = True
 				self.ui.update_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Password)
-
+		
 		def trigger_password_mode_create(self):
-			if self.password_mode_create :
+			if self.password_mode_create:
 				self.password_mode_create = False
 				self.ui.create_staff_password_box.setEchoMode(QtWidgets.QLineEdit.Normal)
 			else:
@@ -339,14 +344,59 @@ try:
 
 
 		def load_staff_info(self):
-			self.show_staff_info_page()	
+			self.show_staff_info_page()
+			leStaff = self.staff_list[self.ui.staff_list.currentRow()]
+			self.ui.info_staff_username_box.setText(leStaff.userName)
+			self.ui.info_staff_fullname_box.setText(leStaff.fullName)
+			self.ui.info_staff_email_box.setText(leStaff.email)
 
+		def load_staff_info_to_update(self):
+			self.show_update_staff_page()
+			leStaff = self.staff_list[self.ui.staff_list.currentRow()]
+			self.ui.update_staff_username_box.setText(leStaff.userName)
+			self.ui.update_staff_fullname_box.setText(leStaff.fullName)
+			self.ui.update_staff_email_box.setText(leStaff.email)
+			
+
+
+		def update_staff(self):
+			leStaff = self.staff_list[self.ui.staff_list.currentRow()]
+			userName = self.ui.update_staff_username_box.text()
+			fullName = self.ui.update_staff_fullname_box.text()
+			email = self.ui.update_staff_email_box.text()
+			password = self.ui.update_staff_password_box.text()
+			staffId = leStaff.id
+			companyId = leStaff.companyId
+			if popupmessage("Caution!!!","Are you sure you want to update this staff information ???"):
+				r = requests.put('https://bugtracker-api.azurewebsites.net/api/Staff/Update', json={
+				"id": staffId,
+				"userName" : userName,
+				"password" : password,
+				"fullName" : fullName,
+				"companyId": companyId,
+				"email" : email
+				})
+			print(r)
+			self.show_welcome_page()
+			self.reload_list()
+			#print(r.json())
 
 		def load_app_info(self):
 			self.show_app_info_page()
 
+			leApp = self.app_list[self.ui.app_list.currentRow()]
+			self.ui.info_app_name_box.setText(leApp.name)
+			#self.ui.create_app_logoUrl_box.setText(leApp.logoURL)
+			self.info_app_staff_list = []
+			self.ui.info_app_staff_list.clear()
+			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Staff/GetByAppId/'+str(leApp.id))
+			for i in r.json():
+				self.info_app_staff_list.append(Staff(i))
+				#print(i)
+			for s in self.staff_list:
+				self.ui.info_app_staff_list.addItem(s.userName)
 
-		def show_welcome_page(self)
+		def show_welcome_page(self):
 			self.ui.pager.setCurrentIndex(0)
 		
 		def show_app_info_page(self):
@@ -392,11 +442,13 @@ try:
 			self.app_list = []
 			self.ui.app_list.clear()
 			self.staff_list = []
-			self.ui.staff_list
+			self.ui.staff_list.clear()
 			self.companyId = None
 
-		def reload_app_list(self):
+		def reload_list(self):
 			self.clear_app_list()
+			self.ui.staff_list.clear()
+			self.staff_list = []
 			self.load_app_staff_list()
 			self.itemSelectionDetected = False
 			

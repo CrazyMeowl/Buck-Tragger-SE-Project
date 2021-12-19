@@ -728,6 +728,9 @@ color:rgb(17, 60, 74);</string>
              </property>
             </widget>
             <widget class="QListWidget" name="info_app_staff_list">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1174,6 +1177,9 @@ color:rgb(17, 60, 74);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="info_staff_email_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1193,6 +1199,9 @@ color: rgb(221, 221, 221);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="info_staff_fullname_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1212,6 +1221,9 @@ color: rgb(221, 221, 221);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="info_staff_username_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1236,7 +1248,7 @@ color: rgb(221, 221, 221);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>110</y>
+               <y>0</y>
                <width>221</width>
                <height>41</height>
               </rect>
@@ -1253,7 +1265,7 @@ color:rgb(17, 60, 74);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>220</y>
+               <y>110</y>
                <width>111</width>
                <height>41</height>
               </rect>
@@ -1266,11 +1278,11 @@ color:rgb(17, 60, 74);</string>
               <string>Email</string>
              </property>
             </widget>
-            <widget class="QLabel" name="label_13">
+            <widget class="QLabel" name="username_label">
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>0</y>
+               <y>220</y>
                <width>211</width>
                <height>41</height>
               </rect>
@@ -1341,7 +1353,7 @@ color : white;</string>
               <string>Cancel</string>
              </property>
             </widget>
-            <widget class="QLabel" name="label_24">
+            <widget class="QLabel" name="password_label">
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1385,10 +1397,13 @@ background-color: rgb(85, 170, 255);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="update_staff_username_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>50</y>
+               <y>270</y>
                <width>471</width>
                <height>51</height>
               </rect>
@@ -1407,7 +1422,7 @@ color: rgb(221, 221, 221);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>160</y>
+               <y>50</y>
                <width>471</width>
                <height>51</height>
               </rect>
@@ -1423,6 +1438,9 @@ color: rgb(221, 221, 221);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="update_staff_password_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -1438,14 +1456,14 @@ font: 500 italic 20pt &quot;Ubuntu&quot;;
 color: rgb(221, 221, 221);</string>
              </property>
              <property name="placeholderText">
-              <string>Please dont leave blank in this box!</string>
+              <string>This field cant be changed right now</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="update_staff_email_box">
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>270</y>
+               <y>160</y>
                <width>471</width>
                <height>51</height>
               </rect>

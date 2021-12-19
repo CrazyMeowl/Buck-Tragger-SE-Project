@@ -299,6 +299,7 @@ class Ui_Dialog(object):
 "color:rgb(17, 60, 74);")
         self.label_6.setObjectName("label_6")
         self.info_app_staff_list = QtWidgets.QListWidget(self.app_info_page)
+        self.info_app_staff_list.setEnabled(False)
         self.info_app_staff_list.setGeometry(QtCore.QRect(0, 160, 471, 501))
         self.info_app_staff_list.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
@@ -495,6 +496,7 @@ class Ui_Dialog(object):
 "color:rgb(17, 60, 74);")
         self.label_20.setObjectName("label_20")
         self.info_staff_email_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_email_box.setEnabled(False)
         self.info_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
         self.info_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
@@ -502,6 +504,7 @@ class Ui_Dialog(object):
 "color: rgb(221, 221, 221);")
         self.info_staff_email_box.setObjectName("info_staff_email_box")
         self.info_staff_fullname_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_fullname_box.setEnabled(False)
         self.info_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
         self.info_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
@@ -509,6 +512,7 @@ class Ui_Dialog(object):
 "color: rgb(221, 221, 221);")
         self.info_staff_fullname_box.setObjectName("info_staff_fullname_box")
         self.info_staff_username_box = QtWidgets.QLineEdit(self.staff_info_page)
+        self.info_staff_username_box.setEnabled(False)
         self.info_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
         self.info_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
@@ -519,20 +523,20 @@ class Ui_Dialog(object):
         self.update_staff_page = QtWidgets.QWidget()
         self.update_staff_page.setObjectName("update_staff_page")
         self.label_16 = QtWidgets.QLabel(self.update_staff_page)
-        self.label_16.setGeometry(QtCore.QRect(0, 110, 221, 41))
+        self.label_16.setGeometry(QtCore.QRect(0, 0, 221, 41))
         self.label_16.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_16.setObjectName("label_16")
         self.label_21 = QtWidgets.QLabel(self.update_staff_page)
-        self.label_21.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_21.setGeometry(QtCore.QRect(0, 110, 111, 41))
         self.label_21.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_21.setObjectName("label_21")
-        self.label_13 = QtWidgets.QLabel(self.update_staff_page)
-        self.label_13.setGeometry(QtCore.QRect(0, 0, 211, 41))
-        self.label_13.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+        self.username_label = QtWidgets.QLabel(self.update_staff_page)
+        self.username_label.setGeometry(QtCore.QRect(0, 220, 211, 41))
+        self.username_label.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
-        self.label_13.setObjectName("label_13")
+        self.username_label.setObjectName("username_label")
         self.confirm_update_staff_button = QtWidgets.QPushButton(self.update_staff_page)
         self.confirm_update_staff_button.setGeometry(QtCore.QRect(10, 670, 131, 51))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -565,11 +569,11 @@ class Ui_Dialog(object):
 "font: 700 20pt \"Ubuntu\";\n"
 "color : white;")
         self.cancel_update_staff_button.setObjectName("cancel_update_staff_button")
-        self.label_24 = QtWidgets.QLabel(self.update_staff_page)
-        self.label_24.setGeometry(QtCore.QRect(0, 330, 191, 41))
-        self.label_24.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
+        self.password_label = QtWidgets.QLabel(self.update_staff_page)
+        self.password_label.setGeometry(QtCore.QRect(0, 330, 191, 41))
+        self.password_label.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
-        self.label_24.setObjectName("label_24")
+        self.password_label.setObjectName("password_label")
         self.update_staff_show_password_button = QtWidgets.QPushButton(self.update_staff_page)
         self.update_staff_show_password_button.setGeometry(QtCore.QRect(480, 400, 131, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -584,20 +588,22 @@ class Ui_Dialog(object):
 "background-color: rgb(85, 170, 255);")
         self.update_staff_show_password_button.setObjectName("update_staff_show_password_button")
         self.update_staff_username_box = QtWidgets.QLineEdit(self.update_staff_page)
-        self.update_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.update_staff_username_box.setEnabled(False)
+        self.update_staff_username_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
         self.update_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.update_staff_username_box.setObjectName("update_staff_username_box")
         self.update_staff_fullname_box = QtWidgets.QLineEdit(self.update_staff_page)
-        self.update_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.update_staff_fullname_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
         self.update_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.update_staff_fullname_box.setObjectName("update_staff_fullname_box")
         self.update_staff_password_box = QtWidgets.QLineEdit(self.update_staff_page)
+        self.update_staff_password_box.setEnabled(False)
         self.update_staff_password_box.setGeometry(QtCore.QRect(0, 380, 471, 51))
         self.update_staff_password_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
@@ -605,7 +611,7 @@ class Ui_Dialog(object):
 "color: rgb(221, 221, 221);")
         self.update_staff_password_box.setObjectName("update_staff_password_box")
         self.update_staff_email_box = QtWidgets.QLineEdit(self.update_staff_page)
-        self.update_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.update_staff_email_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
         self.update_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
@@ -805,14 +811,14 @@ class Ui_Dialog(object):
         self.info_staff_username_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
         self.label_16.setText(_translate("Dialog", "Full name"))
         self.label_21.setText(_translate("Dialog", "Email"))
-        self.label_13.setText(_translate("Dialog", "User Name"))
+        self.username_label.setText(_translate("Dialog", "User Name"))
         self.confirm_update_staff_button.setText(_translate("Dialog", "Update"))
         self.cancel_update_staff_button.setText(_translate("Dialog", "Cancel"))
-        self.label_24.setText(_translate("Dialog", "Password"))
+        self.password_label.setText(_translate("Dialog", "Password"))
         self.update_staff_show_password_button.setText(_translate("Dialog", "Show Password"))
         self.update_staff_username_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
         self.update_staff_fullname_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
-        self.update_staff_password_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
+        self.update_staff_password_box.setPlaceholderText(_translate("Dialog", "This field cant be changed right now"))
         self.update_staff_email_box.setPlaceholderText(_translate("Dialog", "Please dont leave blank in this box!"))
         self.label_22.setText(_translate("Dialog", "Email"))
         self.confirm_create_staff_button.setText(_translate("Dialog", "Create"))
