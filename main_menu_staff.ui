@@ -335,7 +335,7 @@ color : rgb(221, 221, 221);</string>
                 <item>
                  <widget class="QToolBox" name="rerport_box">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="new_report_page">
                    <property name="geometry">
@@ -347,7 +347,7 @@ color : rgb(221, 221, 221);</string>
                     </rect>
                    </property>
                    <attribute name="label">
-                    <string>➤ Report</string>
+                    <string>➤ New Report</string>
                    </attribute>
                    <layout class="QHBoxLayout" name="horizontalLayout_14">
                     <property name="spacing">
@@ -391,8 +391,8 @@ color : rgb(221, 221, 221);</string>
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>230</width>
-                     <height>520</height>
+                     <width>89</width>
+                     <height>69</height>
                     </rect>
                    </property>
                    <attribute name="label">
@@ -657,6 +657,12 @@ color : rgb(221, 221, 221);</string>
          </item>
          <item>
           <widget class="QFrame" name="header_1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -686,33 +692,12 @@ color : rgb(221, 221, 221);</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLineEdit" name="search_box">
-              <property name="styleSheet">
-               <string notr="true">border-bottom:2px solid rgb(246, 174, 153);
-font: 20pt &quot;Ubuntu&quot;;</string>
+             <widget class="QFrame" name="frame_10">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
               </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>Enter app name you wanted to search here ...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="search_button">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="icons.qrc">
-                <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>20</width>
-                <height>20</height>
-               </size>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
               </property>
              </widget>
             </item>
@@ -1180,9 +1165,9 @@ color: rgb(17, 60, 74);</string>
             <widget class="QPushButton" name="confirm_update_bug_button">
              <property name="geometry">
               <rect>
-               <x>180</x>
+               <x>140</x>
                <y>670</y>
-               <width>171</width>
+               <width>131</width>
                <height>51</height>
               </rect>
              </property>
@@ -1203,7 +1188,7 @@ font: 700 20pt &quot;Ubuntu&quot;;
 color : white;</string>
              </property>
              <property name="text">
-              <string>Update Bug</string>
+              <string>Update</string>
              </property>
             </widget>
             <widget class="QPlainTextEdit" name="update_bug_description_box">
@@ -1311,7 +1296,7 @@ color:rgb(17, 60, 74);</string>
               <rect>
                <x>0</x>
                <y>670</y>
-               <width>171</width>
+               <width>131</width>
                <height>51</height>
               </rect>
              </property>
@@ -1332,7 +1317,7 @@ font: 700 20pt &quot;Ubuntu&quot;;
 color : white;</string>
              </property>
              <property name="text">
-              <string>Delete Bug</string>
+              <string>Delete</string>
              </property>
             </widget>
             <widget class="QComboBox" name="update_bug_serverity_box">
@@ -1415,9 +1400,9 @@ color: rgb(221, 221, 221);</string>
             <widget class="QPushButton" name="cancel_update_bug_button">
              <property name="geometry">
               <rect>
-               <x>360</x>
+               <x>280</x>
                <y>670</y>
-               <width>171</width>
+               <width>131</width>
                <height>51</height>
               </rect>
              </property>
@@ -1557,7 +1542,7 @@ color: rgb(221, 221, 221);</string>
             <widget class="QPushButton" name="cancel_create_bug_button">
              <property name="geometry">
               <rect>
-               <x>180</x>
+               <x>170</x>
                <y>670</y>
                <width>171</width>
                <height>51</height>
@@ -1588,7 +1573,7 @@ color : white;</string>
               <rect>
                <x>0</x>
                <y>670</y>
-               <width>171</width>
+               <width>161</width>
                <height>51</height>
               </rect>
              </property>
@@ -1609,7 +1594,7 @@ font: 700 20pt &quot;Ubuntu&quot;;
 color : white;</string>
              </property>
              <property name="text">
-              <string>Create Bug</string>
+              <string>Create</string>
              </property>
             </widget>
             <widget class="QLabel" name="label_18">

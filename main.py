@@ -30,7 +30,18 @@ try:
 			QDialog.__init__(self)
 			loadUi("main_menu_admin.ui",self)
 	'''
-
+	def popupmessage(inTitle,inText):
+		msg = QMessageBox()
+		msg.setIcon(QMessageBox.Information)
+		msg.setWindowTitle(inTitle)
+		msg.setWindowIcon(QtGui.QIcon('logo.png'))
+		msg.setText(inText)
+		msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+		retval = msg.exec_()
+		if retval == QMessageBox.Yes:
+			return True
+		elif retval == QMessageBox.No:
+			return False
 	class User():
 		def __init__(self):
 			self.id = 0
@@ -136,6 +147,7 @@ try:
 					if "admin" in user.roles:
 						#print("ADMIN")
 						widget.setCurrentIndex(menu_admin_index)
+						mainmenuadminscreen.load_app_list()
 					if "customer" in user.roles:
 						#print("Customer")
 						widget.setCurrentIndex(menu_customer_index)
@@ -211,11 +223,12 @@ try:
 				"email": email,
 				"birthdate": birthdate
 				})
-				print(r)
-				print(f"Status Code: {r.status_code}, Response: {r.json()}")
-				for i in r.json():
-					print(i,":",r.json()[i],type(r.json()[i]))
-				if r.status_code == 400:
+				#print(r)
+				# for debug
+				#print(f"Status Code: {r.status_code}, Response: {r.json()}")
+				#for i in r.json():
+				#	print(i,":",r.json()[i],type(r.json()[i]))
+				if r.status_code == 400 or r.status_code == 500:
 					self.ui.error.setText("Username was taken.")
 				else:
 					self.ui.error.setText("You shouldn't see this line, or should you?")
@@ -226,6 +239,7 @@ try:
 					self.ui.fullname_box.clear()
 					self.ui.email_box.clear()
 					self.ui.birthdate_box.setDate(self.date)
+	#Admin
 	class MainMenuAdminScreen(QDialog):
 		def __init__(self):
 			super(MainMenuAdminScreen, self).__init__()
@@ -238,20 +252,47 @@ try:
 			self.ui.exit_button.clicked.connect(sys.exit)
 			self.ui.menu_button.clicked.connect(self.trigger_side_menu)
 			self.ui.refresh_button.clicked.connect(self.reload_app_list)
-			self.ui.search_button.clicked.connect(self.search_for_app)
-			self.ui.report_button.clicked.connect(self.report_app)
+
+			self.ui.app_list.itemClicked.connect(self.clicked_on_app_list)
+			#self.ui.app_list.itemClicked.connect(self.show_app_page)
+			#self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
+
 			self.ui.website_button.clicked.connect(self.open_link)
+
 			self.ui.email_button.clicked.connect(self.open_email)
+
 			self.ui.app_list.itemSelectionChanged.connect(self.on_change_app)
+
 			self.ui.signout_button.clicked.connect(self.signout)
+
 			self.app_list = []
-			self.load_app_list()
+			self.staff_list = []
+			self.add_id = None
+			self.companyId = None
+
 		def signout(self):
 			user.signout()
+			self.clear_all_list()
 			widget.setCurrentIndex(welcomescreen_index)
+
+		def clicked_on_app_list(self):
+			#print(self.ui.app_list.currentItem().text())
+			if self.ui.app_list.currentItem().text() == 'Create New...':
+				self.show_create_app_page()
+			else:
+				self.load_app_info()
+
+		def show_create_app_page(self):
+			print("heheheh")
+
+		def load_app_info(self):
+			app_id = self.app_list[self.ui.app_list.currentRow()].id
+			print(app_id)
 		def on_change_app(self):
+			#self.show_app_page(	)
 			self.itemSelectionDetected = True
-				
+			#print("nice")
+			
 		def open_email(self):
 			recipient = 'ITITIU19185@student.hcmiu.edu.vn'
 			subject = 'Need support'
@@ -262,34 +303,15 @@ try:
 		def open_link(self):
 			webbrowser.open("https://bugtracker-api.azurewebsites.net/swagger/index.html")
 
-		def report_app(self):
-			if self.itemSelectionDetected == True:
-				app_id = self.app_list[self.ui.app_list.currentRow()].id
-				reportscreen = ReportScreen(user.id,app_id)
-				widget.addWidget(reportscreen)
-				report_index = 6
-				widget.setCurrentIndex(report_index)
-			#print(clicked,type(clicked)) Debug 
-			#print(self.app_list[clicked].name)
-
 		def clear_app_list(self):
 			self.app_list = []
 			self.ui.app_list.clear()
 
-		def search_for_app(self):
-			
-			keyword = self.ui.search_box.text()
-			if keyword == '':
-				self.reload_app_list()
-			else:
-				self.clear_app_list()
-				link = 'https://bugtracker-api.azurewebsites.net/api/App/SearchByName/'
-				r = requests.get(link+keyword)
-				for i in r.json():
-					self.app_list.append(App(i))
-				for a in self.app_list:
-					self.ui.app_list.addItem(a.name)
-			
+		def clear_all_list(self):
+			self.app_list = []
+			self.ui.app_list.clear()
+			self.companyId = None
+
 		def reload_app_list(self):
 			self.clear_app_list()
 			self.load_app_list()
@@ -297,11 +319,19 @@ try:
 			
 		def load_app_list(self):
 			self.app_list = []
-			r = requests.get('https://bugtracker-api.azurewebsites.net/api/App/GetAll')
-			for i in r.json():
-				self.app_list.append(App(i))
-			for a in self.app_list:
-				self.ui.app_list.addItem(a.name)
+			r = requests.get('https://bugtracker-api.azurewebsites.net/api/Company/GetAll')
+			print(r.json())
+			for c in r.json():
+				if c['adminId'] == user.id:
+					companyId = c['id']
+					r = requests.get('https://bugtracker-api.azurewebsites.net/api/App/GetByCompanyId/'+str(companyId))
+					for i in r.json():
+						self.app_list.append(App(i))
+						print(i)
+					for a in self.app_list:
+						self.ui.app_list.addItem(a.name)
+			self.ui.app_list.addItem("Create New...")
+			
 			'''
 			i = 0
 			while i < 100:
@@ -310,7 +340,6 @@ try:
 			'''
 			#print(user.id)
 		def trigger_side_menu(self):
-			
 			if self.side_menu_state == False:
 				self.ui.slide_menu_container.setMaximumWidth(250)
 			else:
@@ -331,10 +360,10 @@ try:
 			self.ui.exit_button.clicked.connect(sys.exit)
 			self.ui.menu_button.clicked.connect(self.trigger_side_menu)
 			self.ui.refresh_button.clicked.connect(self.reload_app_list)
-			self.ui.search_button.clicked.connect(self.search_for_app)
+			#self.ui.search_button.clicked.connect(self.search_for_app)
 			#self.ui.report_button.clicked.connect(self.report_app)
 			self.ui.app_list.itemClicked.connect(self.load_report_bug)
-			#self.ui.app_list.itemClicked.connect(self.show_app_page)
+			self.ui.app_list.itemClicked.connect(self.show_app_page)
 			self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
 
 			self.ui.old_report_list.itemClicked.connect(lambda: self.load_report_info("old"))
@@ -363,6 +392,8 @@ try:
 
 			self.ui.delete_report_button.clicked.connect(self.delete_report)
 
+			self.ui.delete_bug_button.clicked.connect(self.delete_bug)
+
 			self.app_list = []
 			self.report_list = []
 			self.old_report_list = []
@@ -370,57 +401,80 @@ try:
 			self.add_id = None
 			#self.load_app_list()
 		def create_bug(self):
-			print("Created")
-			print(self.ui.create_bug_serverity_box.currentIndex())
-			print(self.ui.create_bug_status_box.currentIndex())
+			if popupmessage("Caution!!!","Are you sure you want to create this bug ???"):
+				#print("Created")
+				serverity = self.ui.create_bug_serverity_box.currentIndex()
+				status = self.ui.create_bug_status_box.currentIndex()
+				title = self.ui.create_bug_title_box.toPlainText()
+				desc = self.ui.create_bug_description_box.toPlainText()
+				app_id = self.app_list[self.ui.app_list.currentRow()].id
+				report_id = self.report_list[self.ui.report_list.currentRow()].id
+				report_list = [report_id]
+				r = requests.post('https://bugtracker-api.azurewebsites.net/api/Bug/Create', json={
+				"id": 0,
+				"title": title,
+				"serverity": serverity,
+				"status": status,
+				"description": desc,
+				"appId": app_id,
+				"reportIDs": report_list
+				})
+				#print(r)
 
+				'''
+				{
+				  "id": 0,
+				  "title": "string",
+				  "serverity": 0,
+				  "status": 0,
+				  "description": "string",
+				  "appId": 1,
+				  "reportIDs": [
+				    1
+				  ]
+				}
+				'''
+				self.reload_app_list()
 		def update_bug(self):
-			pass
+			if popupmessage("Caution!!!","Are you sure you want to update this bug ???"):
+
+				serverity = self.ui.update_bug_serverity_box.currentIndex()
+				status = self.ui.update_bug_status_box.currentIndex()
+				title = self.ui.update_bug_title_box.toPlainText()
+				desc = self.ui.update_bug_description_box.toPlainText()
+				print(desc)
+				app_id = self.app_list[self.ui.app_list.currentRow()].id
+				bug_id = self.bug_list[self.ui.bug_list.currentRow()].id
+				#report_list = []
+				r = requests.put('https://bugtracker-api.azurewebsites.net/api/Bug/Update', json={
+				
+				"title": title,
+				"serverity": serverity,
+				"status": status,
+				"description": desc,
+				"appId": app_id,
+				"id": bug_id
+				})
+				self.reload_app_list()
+				
 
 		def delete_report(self):
-			msg = QMessageBox()
-			msg.setIcon(QMessageBox.Information)
-			msg.setWindowTitle("Caution !")
-			msg.setWindowIcon(QtGui.QIcon('logo.png'))
-			#msg.setStyleSheet("background-color: rgb(0, 0, 0);")
-			#msg.setStyleSheet("text-color: rgb(255, 255, 255);")
-			msg.setText("Are you sure to delete this report")
-			msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-			retval = msg.exec_()
-			#print("value of pressed message box button:", retval)
-			if retval == QMessageBox.Yes:
-				#print('Yes pressed')
+			if popupmessage("Caution!!!","Are you sure you want to delete this report ???"):
 				leReport = self.report_list[self.ui.report_list.currentRow()]
 				r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
 				self.reload_app_list()
-			elif retval == QMessageBox.No:
-				#print('No pressed')
-				pass
-			#leReport = self.report_list[self.ui.report_list.currentRow()]
-			#r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
+
 
 		def delete_bug(self):
-			msg = QMessageBox()
-			msg.setIcon(QMessageBox.Information)
-			msg.setWindowTitle("Caution !")
-			msg.setWindowIcon(QtGui.QIcon('logo.png'))
-			#msg.setStyleSheet("background-color: rgb(0, 0, 0);")
-			#msg.setStyleSheet("text-color: rgb(255, 255, 255);")
-			msg.setText("Are you sure to delete this bug")
-			msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-			retval = msg.exec_()
-			#print("value of pressed message box button:", retval)
-			if retval == QMessageBox.Yes:
-				#print('Yes pressed')
+			related_report_list = []
+			if popupmessage("Caution!!!","Are you sure you want to delete this bug ???"):
 				leBug = self.bug_list[self.ui.bug_list.currentRow()]
-				r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Bug/Delete/'+str(leBug.id))
+				r = requests.get('https://bugtracker-api.azurewebsites.net/api/Report/GetByBugId/'+str(leBug.id))
+				for i in r.json():
+					leReport = Report(i)
+					r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
+				r2 = requests.delete('https://bugtracker-api.azurewebsites.net/api/Bug/Delete/'+str(leBug.id))
 				self.reload_app_list()
-			elif retval == QMessageBox.No:
-				#print('No pressed')
-				pass
-			#leReport = self.report_list[self.ui.report_list.currentRow()]
-			#r = requests.delete('https://bugtracker-api.azurewebsites.net/api/Report/Delete/'+str(leReport.id))
-
 
 		def show_app_page(self):
 			self.ui.pager.setCurrentIndex(0)
@@ -512,7 +566,7 @@ try:
 			self.clear_all_list()
 			widget.setCurrentIndex(welcomescreen_index)
 		def on_change_app(self):
-			self.show_app_page(	)
+			self.show_app_page()
 			self.itemSelectionDetected = True
 			#print("nice")
 			
@@ -539,20 +593,7 @@ try:
 			self.ui.bug_list.clear()
 			self.old_report_list = []
 			self.ui.old_report_list.clear()
-		def search_for_app(self):
-			
-			keyword = self.ui.search_box.text()
-			if keyword == '':
-				self.reload_app_list()
-			else:
-				self.clear_app_list()
-				link = 'https://bugtracker-api.azurewebsites.net/api/App/SearchByName/'
-				r = requests.get(link+keyword)
-				for i in r.json():
-					self.app_list.append(App(i))
-				for a in self.app_list:
-					self.ui.app_list.addItem(a.name)
-			
+
 		def reload_app_list(self):
 			self.clear_app_list()
 			self.load_app_list()
@@ -685,35 +726,45 @@ try:
 			self.user_id = user_id
 			self.app_id = app_id
 			print(self.user_id,self.app_id)
-		#def clear_data(self):
 		def cancel(self):
 			widget.setCurrentIndex(menu_customer_index)
 		def report(self):
 			#title = self.ui.title_box.text()
 			title = self.ui.select_box.currentText()
 			desc = self.ui.description_box.toPlainText()
-			
-			r = requests.post('https://bugtracker-api.azurewebsites.net/api/Report/Create', json={
-			"id": 0,
-			"title": title,
-			"description": desc,
-			"customerId": self.user_id,
-			"appId": self.app_id
-			})
-			#popup report
-			msg = QMessageBox()
-			msg.setIcon(QMessageBox.Information)
+			if title == 'Else' and desc == '':
+				msg = QMessageBox()
+				msg.setIcon(QMessageBox.Information)
 
-			msg.setText("Thank you for reporting the bug !")
-			#msg.setInformativeText("This is additional information")
-			msg.setWindowTitle("Thank you !")
-			msg.setWindowIcon(QtGui.QIcon('logo.png'))
-			#msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-			msg.setStandardButtons(QMessageBox.Ok)
-			retval = msg.exec_()
-			print("value of pressed message box button:", retval)
-			self.ui.description_box.clear()
-			self.cancel()
+				msg.setText("You need to add description for 'Else' option !!!")
+				#msg.setInformativeText("This is additional information")
+				msg.setWindowTitle("Caution !!!")
+				msg.setWindowIcon(QtGui.QIcon('logo.png'))
+				#msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+				msg.setStandardButtons(QMessageBox.Ok)
+				retval = msg.exec_()
+			else:			
+				r = requests.post('https://bugtracker-api.azurewebsites.net/api/Report/Create', json={
+				"id": 0,
+				"title": title,
+				"description": desc,
+				"customerId": self.user_id,
+				"appId": self.app_id
+				})
+				#popup report
+				msg = QMessageBox()
+				msg.setIcon(QMessageBox.Information)
+
+				msg.setText("Thank you for reporting the bug !")
+				#msg.setInformativeText("This is additional information")
+				msg.setWindowTitle("Thank you !")
+				msg.setWindowIcon(QtGui.QIcon('logo.png'))
+				#msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+				msg.setStandardButtons(QMessageBox.Ok)
+				retval = msg.exec_()
+				print("value of pressed message box button:", retval)
+				self.ui.description_box.clear()
+				self.cancel()
 
 	# run this if main
 	if __name__ == "__main__":

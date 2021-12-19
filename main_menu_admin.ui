@@ -167,7 +167,7 @@ QToolBox{
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>logo.png</normaloff>logo.png</iconset>
+                <normaloff>../../../../../.designer/backup/logo.png</normaloff>../../../../../.designer/backup/logo.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -222,42 +222,26 @@ color : rgb(221, 221, 221);</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QToolBox" name="toolBox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>16777215</height>
-               </size>
-              </property>
+             <widget class="QToolBox" name="side_box">
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">font: 700 15pt &quot;Ubuntu&quot;;</string>
               </property>
               <property name="currentIndex">
                <number>1</number>
               </property>
-              <widget class="QWidget" name="drop_menu_1">
+              <widget class="QWidget" name="app_page">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>250</width>
-                 <height>645</height>
+                 <height>631</height>
                 </rect>
                </property>
-               <attribute name="icon">
-                <iconset>
-                 <normaloff>:/black/black/chevron-down.svg</normaloff>:/black/black/chevron-down.svg</iconset>
-               </attribute>
                <attribute name="label">
-                <string>Page 1</string>
+                <string>➤ App</string>
                </attribute>
-               <layout class="QVBoxLayout" name="verticalLayout_8">
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
                 <property name="spacing">
                  <number>0</number>
                 </property>
@@ -273,12 +257,12 @@ color : rgb(221, 221, 221);</string>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item alignment="Qt::AlignTop">
+                <item>
                  <widget class="QFrame" name="frame">
-                  <property name="maximumSize">
+                  <property name="minimumSize">
                    <size>
-                    <width>225</width>
-                    <height>16777215</height>
+                    <width>20</width>
+                    <height>0</height>
                    </size>
                   </property>
                   <property name="frameShape">
@@ -287,68 +271,30 @@ color : rgb(221, 221, 221);</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_10">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_8">
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_9">
-                     <property name="contextMenuPolicy">
-                      <enum>Qt::DefaultContextMenu</enum>
-                     </property>
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_7">
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QListWidget" name="app_list">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
                  </widget>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="Drop_menu_2">
+              <widget class="QWidget" name="report_page">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>250</width>
-                 <height>645</height>
+                 <height>631</height>
                 </rect>
                </property>
-               <attribute name="icon">
-                <iconset>
-                 <normaloff>:/black/black/chevron-down.svg</normaloff>:/black/black/chevron-down.svg</iconset>
-               </attribute>
                <attribute name="label">
-                <string>Page 2</string>
+                <string>    ➤ Staff</string>
                </attribute>
-               <layout class="QVBoxLayout" name="verticalLayout_9">
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
                 <property name="spacing">
                  <number>0</number>
                 </property>
@@ -364,11 +310,17 @@ color : rgb(221, 221, 221);</string>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item alignment="Qt::AlignTop">
+                <item>
                  <widget class="QFrame" name="frame_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>20</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
-                    <width>225</width>
+                    <width>20</width>
                     <height>16777215</height>
                    </size>
                   </property>
@@ -378,45 +330,10 @@ color : rgb(221, 221, 221);</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_11">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_11">
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_10">
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_12">
-                     <property name="text">
-                      <string>PushButton</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
                  </widget>
+                </item>
+                <item>
+                 <widget class="QListWidget" name="staff_list"/>
                 </item>
                </layout>
               </widget>
@@ -516,7 +433,7 @@ color : rgb(221, 221, 221);</string>
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="topMargin">
        <number>0</number>
@@ -527,7 +444,7 @@ color : rgb(221, 221, 221);</string>
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item alignment="Qt::AlignTop">
+      <item>
        <widget class="QFrame" name="header_frame">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -585,6 +502,12 @@ color : rgb(221, 221, 221);</string>
          </item>
          <item>
           <widget class="QFrame" name="header_1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -614,33 +537,12 @@ color : rgb(221, 221, 221);</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLineEdit" name="search_box">
-              <property name="styleSheet">
-               <string notr="true">border-bottom:2px solid rgb(246, 174, 153);
-font: 20pt &quot;Ubuntu&quot;;</string>
+             <widget class="QFrame" name="frame_4">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
               </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>Enter app name you wanted to search here ...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="search_button">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="icons.qrc">
-                <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>20</width>
-                <height>20</height>
-               </size>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
               </property>
              </widget>
             </item>
@@ -722,33 +624,908 @@ font: 20pt &quot;Ubuntu&quot;;</string>
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>5</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="QListWidget" name="app_list">
-           <property name="styleSheet">
-            <string notr="true">font: 700 22pt &quot;Comfortaa&quot;;
-</string>
+          <widget class="QStackedWidget" name="pager">
+           <property name="currentIndex">
+            <number>0</number>
            </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignRight|Qt::AlignBottom">
-          <widget class="QPushButton" name="report_button">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(246, 114, 128);
+           <widget class="QWidget" name="create_app_page">
+            <widget class="QPlainTextEdit" name="plainTextEdit">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>941</width>
+               <height>721</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>941</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="plainText">
+              <string>Welcome Admin</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="test_page_2">
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>191</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Problem</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="create_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>200</x>
+               <y>670</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
 border-style: outset;
 border-width: 1px;
-border-radius: 10px;
+border-radius: 20px;
 border-color: white;
 padding: 2px;
-font: 700 20pt &quot;Ubuntu&quot;;</string>
-           </property>
-           <property name="text">
-            <string>Report</string>
-           </property>
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Create Bug</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="report_description_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>170</y>
+               <width>821</width>
+               <height>451</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>&quot;None&quot;</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_6">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>110</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color:rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Description</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="report_title_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>50</y>
+               <width>431</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>Select a report first</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="delete_report_button">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>670</y>
+               <width>191</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 18px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Delete Report</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="test_page_3">
+            <widget class="QLabel" name="label_7">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>91</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Title</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>110</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color:rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Description</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="bug_title_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>50</y>
+               <width>431</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>Select a bug first</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="bug_description_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>170</y>
+               <width>861</width>
+               <height>261</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>&quot;None&quot;</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="bug_serverity_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>490</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="plainText">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_11">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>440</y>
+               <width>181</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Serverity</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="bug_status_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>600</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_12">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>550</y>
+               <width>131</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Status</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="update_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>670</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Update Bug</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="change_bug_page">
+            <widget class="QLabel" name="label_9">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>91</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Title</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="confirm_update_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>670</y>
+               <width>131</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Update</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="update_bug_description_box">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>170</y>
+               <width>861</width>
+               <height>261</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="plainText">
+              <string>Date : 
+Tested by :
+Cause by :</string>
+             </property>
+             <property name="placeholderText">
+              <string>Enter the description here please</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_13">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>550</y>
+               <width>131</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Status</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_14">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>440</y>
+               <width>181</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Serverity</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="update_bug_title_box">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>50</y>
+               <width>431</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>Please do not leave blank</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_15">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>110</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color:rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Description</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="delete_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>670</y>
+               <width>131</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Delete</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="update_bug_serverity_box">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>490</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:10px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Small</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Normal</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bad</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Extreme</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>EMEGENCY</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QComboBox" name="update_bug_status_box">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>600</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:10px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Working</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Fixed</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Revised</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Approved</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QPushButton" name="cancel_update_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>280</x>
+               <y>670</y>
+               <width>131</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Cancel</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="create_bug_page">
+            <widget class="QComboBox" name="create_bug_serverity_box">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>490</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:10px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Small</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Normal</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bad</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Extreme</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>EMEGENCY</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QLabel" name="label_16">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>110</y>
+               <width>221</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color:rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Description</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_17">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>91</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Title</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="create_bug_status_box">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>600</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:10px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Working</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Fixed</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Revised</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Approved</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QPushButton" name="cancel_create_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>170</x>
+               <y>670</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Cancel</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="confirm_create_bug_button">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>670</y>
+               <width>161</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 114, 128);
+border-style: outset;
+border-width: 1px;
+border-radius: 20px;
+border-color: white;
+padding: 2px;
+font: 700 20pt &quot;Ubuntu&quot;;
+color : white;</string>
+             </property>
+             <property name="text">
+              <string>Create</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_18">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>550</y>
+               <width>131</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Status</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_19">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>440</y>
+               <width>181</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 500 italic 30pt &quot;Ubuntu&quot;;
+color: rgb(17, 60, 74);</string>
+             </property>
+             <property name="text">
+              <string>Serverity</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="create_bug_description_box">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>170</y>
+               <width>861</width>
+               <height>261</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="plainText">
+              <string>Date : 
+Tested by :
+Cause by :
+Desc on report: </string>
+             </property>
+             <property name="placeholderText">
+              <string>Enter the description here please</string>
+             </property>
+            </widget>
+            <widget class="QPlainTextEdit" name="create_bug_title_box">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>50</y>
+               <width>431</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>Please do not leave blank</string>
+             </property>
+            </widget>
+           </widget>
           </widget>
          </item>
         </layout>

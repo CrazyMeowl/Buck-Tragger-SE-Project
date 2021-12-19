@@ -139,7 +139,7 @@ font: 500 italic 20pt &quot;Ubuntu&quot;;
 color: rgb(221, 221, 221);</string>
     </property>
     <property name="placeholderText">
-     <string>Optional for when you chose else</string>
+     <string>Needed for when you chose else</string>
     </property>
    </widget>
    <widget class="QComboBox" name="select_box">
