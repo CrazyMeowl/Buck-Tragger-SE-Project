@@ -289,6 +289,8 @@ try:
 			self.ui.create_staff_show_password_button.clicked.connect(self.trigger_password_mode_create)
 
 			self.ui.confirm_update_staff_button.clicked.connect(self.update_staff)
+
+			self.ui.confirm_create_staff_button.clicked.connect(self.create_staff)
 			#self.ui.app_list.itemClicked.connect(self.show_app_page)
 			#self.ui.report_list.itemClicked.connect(lambda: self.load_report_info("new"))
 
@@ -376,10 +378,30 @@ try:
 				"companyId": companyId,
 				"email" : email
 				})
-			print(r)
-			self.show_welcome_page()
-			self.reload_list()
-			#print(r.json())
+				#print(r)
+				self.show_welcome_page()
+				self.reload_list()
+				#print(r.json())
+
+		def create_staff(self):
+			userName = self.ui.create_staff_username_box.text()
+			fullName = self.ui.create_staff_fullname_box.text()
+			email = self.ui.create_staff_email_box.text()
+			password = self.ui.create_staff_password_box.text()
+		
+			if popupmessage("Caution!!!","Are you sure you want to update this staff information ???"):
+				r = requests.post('https://bugtracker-api.azurewebsites.net/api/Staff/Create', json={
+				"userName" : userName,
+				"password" : password,
+				"fullName" : fullName,
+				"companyId": self.companyId,
+				"email" : email,
+				"birthdate" : "01/01/2000"
+				})
+				#print(r)
+				self.show_welcome_page()
+				self.reload_list()
+				#print(r.json())
 
 		def load_app_info(self):
 			self.show_app_info_page()
@@ -473,7 +495,7 @@ try:
 						#print(i)
 					for s in self.staff_list:
 						self.ui.staff_list.addItem(s.userName)
-
+			self.companyId = companyId
 			self.ui.staff_list.addItem("Create New Staff...")
 			self.ui.app_list.addItem("Create New App...")
 

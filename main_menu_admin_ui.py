@@ -465,7 +465,7 @@ class Ui_Dialog(object):
         self.staff_info_page = QtWidgets.QWidget()
         self.staff_info_page.setObjectName("staff_info_page")
         self.label_9 = QtWidgets.QLabel(self.staff_info_page)
-        self.label_9.setGeometry(QtCore.QRect(0, 0, 211, 41))
+        self.label_9.setGeometry(QtCore.QRect(0, 220, 211, 41))
         self.label_9.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label_9.setObjectName("label_9")
@@ -486,18 +486,18 @@ class Ui_Dialog(object):
 "color : white;")
         self.update_staff_button.setObjectName("update_staff_button")
         self.label_15 = QtWidgets.QLabel(self.staff_info_page)
-        self.label_15.setGeometry(QtCore.QRect(0, 110, 221, 41))
+        self.label_15.setGeometry(QtCore.QRect(0, 0, 221, 41))
         self.label_15.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_15.setObjectName("label_15")
         self.label_20 = QtWidgets.QLabel(self.staff_info_page)
-        self.label_20.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_20.setGeometry(QtCore.QRect(0, 110, 111, 41))
         self.label_20.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_20.setObjectName("label_20")
         self.info_staff_email_box = QtWidgets.QLineEdit(self.staff_info_page)
         self.info_staff_email_box.setEnabled(False)
-        self.info_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.info_staff_email_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
         self.info_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
@@ -505,7 +505,7 @@ class Ui_Dialog(object):
         self.info_staff_email_box.setObjectName("info_staff_email_box")
         self.info_staff_fullname_box = QtWidgets.QLineEdit(self.staff_info_page)
         self.info_staff_fullname_box.setEnabled(False)
-        self.info_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.info_staff_fullname_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
         self.info_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
@@ -513,7 +513,7 @@ class Ui_Dialog(object):
         self.info_staff_fullname_box.setObjectName("info_staff_fullname_box")
         self.info_staff_username_box = QtWidgets.QLineEdit(self.staff_info_page)
         self.info_staff_username_box.setEnabled(False)
-        self.info_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.info_staff_username_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
         self.info_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
@@ -621,7 +621,7 @@ class Ui_Dialog(object):
         self.create_staff_page = QtWidgets.QWidget()
         self.create_staff_page.setObjectName("create_staff_page")
         self.label_22 = QtWidgets.QLabel(self.create_staff_page)
-        self.label_22.setGeometry(QtCore.QRect(0, 220, 111, 41))
+        self.label_22.setGeometry(QtCore.QRect(0, 110, 111, 41))
         self.label_22.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_22.setObjectName("label_22")
@@ -642,12 +642,12 @@ class Ui_Dialog(object):
 "color : white;")
         self.confirm_create_staff_button.setObjectName("confirm_create_staff_button")
         self.label_17 = QtWidgets.QLabel(self.create_staff_page)
-        self.label_17.setGeometry(QtCore.QRect(0, 110, 221, 41))
+        self.label_17.setGeometry(QtCore.QRect(0, 0, 221, 41))
         self.label_17.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color:rgb(17, 60, 74);")
         self.label_17.setObjectName("label_17")
         self.label_14 = QtWidgets.QLabel(self.create_staff_page)
-        self.label_14.setGeometry(QtCore.QRect(0, 0, 211, 41))
+        self.label_14.setGeometry(QtCore.QRect(0, 220, 211, 41))
         self.label_14.setStyleSheet("font: 500 italic 30pt \"Ubuntu\";\n"
 "color: rgb(17, 60, 74);")
         self.label_14.setObjectName("label_14")
@@ -686,21 +686,21 @@ class Ui_Dialog(object):
 "background-color: rgb(85, 170, 255);")
         self.create_staff_show_password_button.setObjectName("create_staff_show_password_button")
         self.create_staff_username_box = QtWidgets.QLineEdit(self.create_staff_page)
-        self.create_staff_username_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
+        self.create_staff_username_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
         self.create_staff_username_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.create_staff_username_box.setObjectName("create_staff_username_box")
         self.create_staff_fullname_box = QtWidgets.QLineEdit(self.create_staff_page)
-        self.create_staff_fullname_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
+        self.create_staff_fullname_box.setGeometry(QtCore.QRect(0, 50, 471, 51))
         self.create_staff_fullname_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"
 "color: rgb(221, 221, 221);")
         self.create_staff_fullname_box.setObjectName("create_staff_fullname_box")
         self.create_staff_email_box = QtWidgets.QLineEdit(self.create_staff_page)
-        self.create_staff_email_box.setGeometry(QtCore.QRect(0, 270, 471, 51))
+        self.create_staff_email_box.setGeometry(QtCore.QRect(0, 160, 471, 51))
         self.create_staff_email_box.setStyleSheet("border:3px solid rgb(17, 60, 74);\n"
 "border-radius:20px;\n"
 "font: 500 italic 20pt \"Ubuntu\";\n"

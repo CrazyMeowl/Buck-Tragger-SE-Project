@@ -1100,7 +1100,7 @@ color : white;</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>0</y>
+               <y>220</y>
                <width>211</width>
                <height>41</height>
               </rect>
@@ -1146,7 +1146,7 @@ color : white;</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>110</y>
+               <y>0</y>
                <width>221</width>
                <height>41</height>
               </rect>
@@ -1163,7 +1163,7 @@ color:rgb(17, 60, 74);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>220</y>
+               <y>110</y>
                <width>111</width>
                <height>41</height>
               </rect>
@@ -1177,28 +1177,6 @@ color:rgb(17, 60, 74);</string>
              </property>
             </widget>
             <widget class="QLineEdit" name="info_staff_email_box">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>270</y>
-               <width>471</width>
-               <height>51</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">border:3px solid rgb(17, 60, 74);
-border-radius:20px;
-font: 500 italic 20pt &quot;Ubuntu&quot;;
-color: rgb(221, 221, 221);</string>
-             </property>
-             <property name="placeholderText">
-              <string>Please dont leave blank in this box!</string>
-             </property>
-            </widget>
-            <widget class="QLineEdit" name="info_staff_fullname_box">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -1220,7 +1198,7 @@ color: rgb(221, 221, 221);</string>
               <string>Please dont leave blank in this box!</string>
              </property>
             </widget>
-            <widget class="QLineEdit" name="info_staff_username_box">
+            <widget class="QLineEdit" name="info_staff_fullname_box">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -1228,6 +1206,28 @@ color: rgb(221, 221, 221);</string>
               <rect>
                <x>0</x>
                <y>50</y>
+               <width>471</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border:3px solid rgb(17, 60, 74);
+border-radius:20px;
+font: 500 italic 20pt &quot;Ubuntu&quot;;
+color: rgb(221, 221, 221);</string>
+             </property>
+             <property name="placeholderText">
+              <string>Please dont leave blank in this box!</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="info_staff_username_box">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>270</y>
                <width>471</width>
                <height>51</height>
               </rect>
@@ -1484,7 +1484,7 @@ color: rgb(221, 221, 221);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>220</y>
+               <y>110</y>
                <width>111</width>
                <height>41</height>
               </rect>
@@ -1530,7 +1530,7 @@ color : white;</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>110</y>
+               <y>0</y>
                <width>221</width>
                <height>41</height>
               </rect>
@@ -1547,7 +1547,7 @@ color:rgb(17, 60, 74);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>0</y>
+               <y>220</y>
                <width>211</width>
                <height>41</height>
               </rect>
@@ -1636,7 +1636,7 @@ background-color: rgb(85, 170, 255);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>50</y>
+               <y>270</y>
                <width>471</width>
                <height>51</height>
               </rect>
@@ -1655,7 +1655,7 @@ color: rgb(221, 221, 221);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>160</y>
+               <y>50</y>
                <width>471</width>
                <height>51</height>
               </rect>
@@ -1674,7 +1674,7 @@ color: rgb(221, 221, 221);</string>
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>270</y>
+               <y>160</y>
                <width>471</width>
                <height>51</height>
               </rect>
